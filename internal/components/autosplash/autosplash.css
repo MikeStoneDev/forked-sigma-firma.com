@@ -21,15 +21,16 @@
 /* .autosplash-outer {} */
 
 .splash-logo {
-    color: #ffa630;
+    color: #535353;
+
+  font-family: "Outfit", serif;
     text-align: center;
     font-size: 6em;
     font-weight: bold;
     padding-top: 20vh;
-    text-shadow: 4px 7px #af815c;
+    text-shadow: 7px 7px #ffee00;
     animation: 5s ease-out unblur;
-    animation-fill-mode: forwards;
-    /* backdrop-filter: saturate(3.7) sepia(1) blur(1px) hue-rotate(0deg) contrast(0.7); */
+    animation-fill-mode: forwards;    /* backdrop-filter: saturate(3.7) sepia(1) blur(1px) hue-rotate(0deg) contrast(0.7); */
 }
 
 .logo-sub {
@@ -47,6 +48,8 @@ color: #03685f;
      color: yellow;
      display: inline;
     text-shadow: 1px 8px 0px #cdcb57;
+    animation: 5s linear boltin;
+    animation-fill-mode: forwards;
 }
 @keyframes bgzoom {
   0% {
@@ -71,4 +74,9 @@ color: #03685f;
 @keyframes scalein {
   0% {
   transform: scale(5) rotate(720deg);}
+}
+
+@keyframes boltin {
+  0% {transform: scale(3);}
+  100% {transform: scale(1);}
 }
