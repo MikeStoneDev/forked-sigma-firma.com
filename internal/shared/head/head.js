@@ -1,8 +1,8 @@
 function jumpTo(eid) {
     var jump = document.getElementById(eid);
     jump.scrollIntoView({
-        behavior: 'auto',
-        block: 'center',
+        behavior: 'smooth',
+        block: 'start',
         inline: 'center'
     });
 }
