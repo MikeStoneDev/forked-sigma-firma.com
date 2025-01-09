@@ -5,11 +5,13 @@
 body, html {
   margin: 0;
   font-family: 'Mulish', sans-serif;
+}
+.wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin: 1em;
   align-items: center;
 }
-
 @media screen and (orientation:portrait) {}
 @media screen and (orientation:landscape) {}

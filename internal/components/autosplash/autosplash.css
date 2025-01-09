@@ -3,24 +3,15 @@
     background-size: cover;
     background-repeat: repeat;
     height: 100vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
     z-index: -1;
     position: fixed;
     width: -webkit-fill-available;
     top:0;
+    left:0;
     animation: 5s linear bgzoom;
     animation-fill-mode: forwards;
 }
-.autosplash-outer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-}
+/* .autosplash-outer {} */
 
 .splash-logo {
     color: #ffa630;

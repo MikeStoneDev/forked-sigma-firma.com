@@ -15,6 +15,7 @@
     align-items: center;
     box-shadow: 7px 7px #8a7e709e;
     overflow: hidden;
+  max-width: -webkit-fill-available;
 }
 
 .term-inner {
@@ -35,13 +36,34 @@
     height: 1.5em;
     background-color: #cd5b5b;
     padding: 0 0.1em;
-    animation: 1s linear infinite blinky;
+    animation: 400ms linear infinite blinky;
 }
 
+.trick {
+    width: 14em;
+    height: 1.5em;
+    background: #5f5567;
+}
+
+
+.carat-trick {
+    position: absolute;
+    margin-left: 1.93em;
+    height: 1.5em;
+    animation: 2s linear typing;
+    display: flex;
+    animation-delay: 2s;
+    animation-fill-mode:forwards;
+}
 @keyframes blinky {
     0% {opacity: 0;}
     50% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+@keyframes typing {
+    0% { margin-left: 1.93em; }
+    100% { margin-left: 15.73em; }
 }
 
 @keyframes expando {
