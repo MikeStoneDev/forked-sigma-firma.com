@@ -2,13 +2,13 @@
   "app": {
     "name": "cyberg ⚡︎  netthaus",
     "command": "",
-    "domain_name": "",
+    "domain_name": "berghaus.hrtsfld.xyz",
     "version": "0.01",
     "env": {},
     "port": "10529",
     "alertsOn": true,
     "tls_enabled": true,
-    "repo": ""
+    "repo": "https://github.com/hartsfield/berhaus.hrtsfld.xyz"
   },
   "gcloud": {
     "command": "gcloud",
