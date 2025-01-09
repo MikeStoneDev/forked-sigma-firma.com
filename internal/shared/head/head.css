@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+:root {
+    --html-bg: hsl(44.86deg 11.08% 77.82%);
+}
+body, html {
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+@media screen and (orientation:portrait) {}
+@media screen and (orientation:landscape) {}

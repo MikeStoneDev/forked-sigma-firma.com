@@ -1,0 +1,35 @@
+.footer-outer {
+     height: 40vh;
+    background-color: #ff744d;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift {
+    margin-top: 4em;
+    font-size: 0.5em;
+    color: #5c5c4e;
+}
+.footer-logo {
+    color: #fffdda;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5em;
+}
+
+.footer-bolt-logo {
+    padding: 0 0.5em;
+    font-weight: bold;
+    color: #5c5c4e;
+}
+

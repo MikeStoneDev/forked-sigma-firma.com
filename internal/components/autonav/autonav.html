@@ -1,0 +1,32 @@
+<div class="navbar-outer">
+  <div class="logo-nav" onclick="window.location = window.location.origin">berg ⚡︎  haus</div>
+
+  <div class="nav-landscape">
+    <ul>
+
+      <li onclick="jumpTo('about-outer')">about</li>
+      <li onclick="jumpTo('contact-outer')">contact</li>
+
+    </ul>
+  </div>
+
+  <div class="nav-portrait" id="nav-portrait">
+    <div class="nav-portrait-logo">berg ⚡︎  haus</div>
+    <ul>
+
+      <li onclick="jumpTo('about-outer')">about</li>
+      <li onclick="jumpTo('contact-outer')">contact</li>
+
+    </ul>
+  </div>
+
+  <div class="ham-outer" onclick="showNavPortrait()">
+    <div class="hamburger"></div>
+    <div class="hamburger"></div>
+    <div class="hamburger"></div>
+  </div>
+
+</div>
+
+<style>{{ template "autonav.css" }}</style>
+<script>{{ template "autonav.js"}}</script>

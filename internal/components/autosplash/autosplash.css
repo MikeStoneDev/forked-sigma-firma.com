@@ -1,0 +1,75 @@
+.splash-inner {
+    background-image: url(public/media/digi.svg);
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    position: fixed;
+    width: -webkit-fill-available;
+    top:0;
+    animation: 5s linear bgzoom;
+    animation-fill-mode: forwards;
+}
+.autosplash-outer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.splash-logo {
+    color: #ffa630;
+    font-size: 6em;
+    font-weight: bold;
+    padding-top: 20vh;
+    text-shadow: 4px 7px #af815c;
+    animation: 5s ease-out unblur;
+    animation-fill-mode: forwards;
+    /* backdrop-filter: saturate(3.7) sepia(1) blur(1px) hue-rotate(0deg) contrast(0.7); */
+}
+
+.logo-sub {
+color: #03685f;
+    font-size: 1.8em;
+    font-weight: bold;
+    width: 100%;
+    padding: 0.5em 0.5em 0.5em 4em;
+    margin-top: 1.2em;
+    border-radius: 0.4em;
+    backdrop-filter: sepia(1) blur(2.3px);
+    background: linear-gradient(45deg, #6affd996, #97ff0087, #ffff008f, #ff561f85, transparent);
+}
+.bolt-logo {
+     color: yellow;
+     display: inline;
+    text-shadow: 1px 8px 0px #cdcb57;
+}
+@keyframes bgzoom {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes unblur {
+  0% {
+    padding-top: 40vh;
+  }
+  20% {
+    padding-top: 10vh;
+  }
+  100% {
+  }
+}
+
+@keyframes scalein {
+  0% {
+  transform: scale(5) rotate(720deg);}
+}
