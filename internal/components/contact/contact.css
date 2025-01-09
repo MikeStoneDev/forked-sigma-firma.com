@@ -1,6 +1,7 @@
 .contact-outer {
     min-height: 100vh;
-    background: linear-gradient(0deg, #fffeed 70%, transparent);
+    /* background: linear-gradient(0deg, #fffeed 70%, transparent); */
+    background-color: #fffeed;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;

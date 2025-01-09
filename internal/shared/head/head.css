@@ -10,7 +10,7 @@ body, html {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
   align-items: center;
 }
 @media screen and (orientation:portrait) {}

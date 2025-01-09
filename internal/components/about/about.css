@@ -1,3 +1,14 @@
 .about-outer {
     min-height: 100vh;
+    background: white;
+    width: 100vw;
+}
+
+.about-inner {
+    margin: 3em;
+    text-align: justify;
+}
+
+.about-inner > p {
+    padding-bottom: 1.5em;
 }

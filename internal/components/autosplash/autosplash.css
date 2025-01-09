@@ -1,3 +1,10 @@
+.autosplash-outer {
+  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
 .splash-inner {
     background-image: url(public/media/digi.svg);
     background-size: cover;
