@@ -7,10 +7,41 @@
 .about-inner {
     margin: 6em;
     text-align: justify;
+            z-index: 5;
+        position: relative;
 }
 
 .about-inner > p {
     padding-bottom: 1.5em;
+}
+
+.about-logo {
+    color: black;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 3em;
+    z-index: 5;
+    font-weight: bold;
+    position: relative;
+}
+.about-bolt-logo {
+    line-height: 1px;
+    font-size: 40em;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    color: #fffd95;
+    margin-left: 21vw;
+    margin-top: -9vh;
+    font-weight: bold;
+    text-shadow: 20px 19px #9de1dc;
+   /* color: black; */
+   /*  font-size: 3em; */
+   /*  text-align: center; */
+   /*  margin-top: 3em; */
+   /*  z-index: 5; */
+   /*  font-weight: bold; */
+   /*  position: relative; */
 }
 
 @media screen and (orientation:portrait) {
