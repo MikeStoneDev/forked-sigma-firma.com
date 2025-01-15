@@ -30,13 +30,13 @@
     z-index: 1;
     position: absolute;
     text-align: center;
-    color: #fffd95;
     margin-left: 21vw;
     margin-top: -9vh;
     font-weight: bold;
-    text-shadow: 20px 19px #9de1dc;
     height: 3em;
     max-width: 100vw;
+color: #f9ff00;
+    text-shadow: 20px 19px #00ffec;
    /* color: black; */
    /*  font-size: 3em; */
    /*  text-align: center; */
