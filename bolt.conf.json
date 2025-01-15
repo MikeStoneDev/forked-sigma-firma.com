@@ -1,14 +1,14 @@
 {
   "app": {
-    "name": "cyberg ⚡︎  netthaus",
+    "name": "sigma ⚡︎  secura",
     "command": "",
-    "domain_name": "berghaus.hrtsfld.xyz",
+    "domain_name": "sigma.hrtsfld.xyz",
     "version": "0.01",
     "env": {},
     "port": "10529",
     "alertsOn": true,
     "tls_enabled": true,
-    "repo": "https://github.com/hartsfield/berhaus.hrtsfld.xyz"
+    "repo": "https://github.com/hartsfield/sigma.hrtsfld.xyz"
   },
   "gcloud": {
     "command": "gcloud",
