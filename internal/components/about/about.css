@@ -5,11 +5,13 @@
 
 li {
     margin-bottom: 0.5em;
+    margin-right: 3em;
 }
 
 .about-inner > h3 {
 text-align: center;
 color: #f4904f;
+margin-top: 2em;
 }
 
 .about-inner {
@@ -21,7 +23,7 @@ color: #f4904f;
 }
 
 .about-inner > p {
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
 }
 
 .about-logo {
