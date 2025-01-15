@@ -2,69 +2,94 @@
   <div class="about-logo">{{.AppName}}</div>
   <div class="about-bolt-logo"> ⚡︎  </div>
   <div class="about-inner">
-
-    <h3>ABOUT</h3>
+    <h3>ABOUT <b>{{.AppName}}</b></h3>
     <p class="aboutP">
       <b>{{.AppName}}</b> is an advanced software and consulting firm operating at
       the intersection of technological innovation and strategic business
-      transformation. We specialize in full stack project 
-      development, management, and consultation. {{.AppName}} can design, create, 
-      and deploy web, cloud, and server based applications.
-
-      {{.AppName}} also specializes in devOps, microservice and component based
-      architectures, and continuous delivery systems for companies and 
-      organizations building internal and cloud based software.
-
+      transformation. 
+    </p>
+    <p>
+      We specialize in full stack project 
+      development, management, and consultation, and can design, create, 
+      and deploy web, cloud, and server based applications in as little as minutes, 
+      and for less than you think. Additionally, we specialize in devOps, 
+      microservice and component based architectures, and continuous delivery
+      and integration systems for companies and organizations seeking custom
+      solutions for internal or cloud based software.
+    </p>
+    <p>
       Typically, development consists of a multi-step process which starts with 
       analyzing the projects scope and designing a linear workflow for 
       completing the project within a clients time-frame and budget. This may 
       include pre-project planning such as building a development team (if 
-      neccessary) and procurement of essential resources. After the planning 
+      necessary) and procurement of essential resources. After the planning 
       phase, the project is built to the clients exact specifications, tested, 
-      and finally deployed, using the most appropriate state-of-the-art 
-      deployment solution. 
+      and finally deployed, using state-of-the-art cloud-based deployment solutions. 
     </p>
 
-    <h3>FULL STACK DEVELOPMENT</h3>
-    <p class="aboutP">
-      {{.AppName}} generally plans for a component based 
-      architecture, either directly through template composition or with a third 
-      party framework such as React. All projects are designed for long term
-      growth and simple maintenance.
-      New projects are designed using the Go programming language for the 
-      back-end architecture. 
+    <h3>DATA ANALYSIS?</h3>
+    <p>
+      Data analysis is the process of analyzing and 
+      transforming data. Our company can help your company 
+      create tools that pull data from digital sources, 
+      analyze it, and perform operations on it. This type 
+      of tooling can be used to keep track of statistics 
+      that can change how your company performs, ultimately 
+      creating long-term and achievable avenues of revenue (profits). 
     </p>
+
+    <!-- <h3>FULL STACK DEVELOPMENT</h3> -->
+    <!-- <p> -->
+    <!--   {{.AppName}} generally plans for a component based --> 
+    <!--   architecture, either directly through template composition or with a third --> 
+    <!--   party framework such as React. All projects are designed for long term -->
+    <!--   growth and simple maintenance. -->
+    <!--   New projects are designed using the Go programming language for the --> 
+    <!--   back-end architecture. --> 
+    <!-- </p> -->
 
     <h3>DEVOPS, MICROSERVICES, AND <br> CONTINUOUS DELIVERY/INTEGRATION</h3>
 
-    <p class="aboutP">
+    <p>
       Most projects only expose a small percentage of their scope to the client.
-      For a complex project to work properly there is often many services 
-      running behind the scenes and {{.AppName}} can design, 
-      create, deploy, and maintain these services, or help your team do so.
-      {{.AppName}} implements microservices using the Go 
-      programming language. Continuous delivery and integration is implemented 
-      by planning and building microservices for each action needed for CD/CI, 
+      For a complex project to function properly it may require many services working
+      in tandem and in-sync. Our company can design, 
+      create, deploy, and maintain these services, or help your team in doing so.
+    </p>
+    <p>
+      Continuous delivery and integration is implemented 
+      by planning and building microservices for each action needed for an
+      individual companies CI/CD workflow, 
       including unit tests, security audits, version control and backups, 
-      staging, final deployment, and whatever other actions maybe neccessary for
-      your project. 
+      staging, final deployment, and whatever other actions that we've determined
+      to be necessary. 
     </p>
 
-    <h3>SERVICES</h3>
+    <h3>SKILLS & SERVICES</h3>
     <ul class="skills-ul">
-      <li>Sofware development using the Go programming language, Linux, 
-        JavaScript, CSS, HTML, Git, Vim, and other tools</li>
-      <li>Project management using cloud services such as Google Cloud
-        Platform, and Amazon Web Services</li>
-      <li>Research & Development</li>
-      <li>Leadership, working with teams, and working independently</li>
-      <li>Database management using Redis and MongoDB</li>
-      <li>Component based software architecture using templating or a 
-        third party framework such as React</li>
-      <li>Project deployment and maintenance on the cloud</li>
-      <li>Microservices and back-end tools, including shell scripts and 
-        small programs used for testing and deployment</li>
+      <li>Product consultation and design</li>
+      <li>Product research & development</li>
+      <li>Product deployment and management via Google Cloud Platform and other cloud services</li>
+      <li>Infrastructure and task automation</li>
+      <li>Data scraping and analysis</li>
+      <li>Continuous integration and development workflows for microservices, advanced web applications, and other business software</li>
+      <li>Software development using a variety of programming languages and component based software architectures</li>
+      <li>Financial integrations, stock analysis tools, and trend detection services</li>
+      <li>REST API's and http(s) servers</li>
+      <li>Database design and administration</li>
+      <li>Security assessments</li>
     </ul>
+    <p>
+      Does your business need an advanced website or data analysis 
+      tools? Are you trying to develop a new product but need help
+      designing the software? Does your business need to integrate 
+      data from multiple sources? Could you increase your profits 
+      if you automated certain tasks or if you had a program that 
+      alerted you and your company when certain data changed? 
+      {{.AppName}} can help your company design and build products 
+      that can streamline these processes and increase your 
+      businesses profits.
+    </p>
   </div>
   <style>{{ template "about.css" . }}</style>
   <script>{{ template "about.js" . }}</script>
