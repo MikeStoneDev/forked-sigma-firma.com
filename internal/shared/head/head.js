@@ -43,7 +43,4 @@ window.onscroll = function() {
     var f = (y/(window.innerHeight))
     a.style.backdropFilter = "invert(" + f + ")";
     a.style.filter = "invert(" + f + ")" + " sepia(" + f + ")" + "hue-rotate(" + (f+f)*300 + "deg)";
-    // if ((prcnt/(y+1)) < 0.3) {
-         
-    // }
 }

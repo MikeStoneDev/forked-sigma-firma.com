@@ -4,7 +4,7 @@
     /* animation: 1s linear expando; */
     /* animation-delay: 0.5s; */
     height: 5.5ch;
-    width: calc(100% - 2em);
+    width: calc(100% - 4em);
     margin-top: 7em;
     animation-fill-mode:forwards;
     padding: 1em;
@@ -17,7 +17,9 @@
     align-items: center;
     box-shadow: 7px 7px #8a7e709e;
     overflow: hidden;
-  max-width: 50ch;
+    max-width: 50ch;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .term-inner {
