@@ -1,7 +1,6 @@
 .about-outer {
     min-height: 100vh;
     background: white;
-    width: 100vw;
 }
 
 .about-inner {
@@ -53,5 +52,9 @@ color: #f9ff00;
     }
     .about-bolt-logo {
         margin-left: 0;
+    }
+    .about-outer {
+
+    width: 100vw;
     }
 }

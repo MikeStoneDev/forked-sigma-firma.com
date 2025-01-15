@@ -7,13 +7,25 @@
 body, html {
   margin: 0;
   font-family: 'Mulish', sans-serif;
+  font-size: 1em;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin: 1em 1em 0 1em;
+  margin: 1em 0em 0 0em;
   align-items: center;
 }
-@media screen and (orientation:portrait) {}
-@media screen and (orientation:landscape) {}
+@media screen and (orientation:portrait) {
+  body, html  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
+@media screen and (orientation:landscape) {
+  .wrapper {
+    max-width: 80ch;
+  }
+}
