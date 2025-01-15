@@ -1,7 +1,9 @@
 .footer-outer {
-     height: 40vh;
     background-color: #ff744d;
     width: 100%;
+}
+.footer-inner {
+    height: 30vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -27,9 +29,32 @@
     font-size: 313%;
 }
 
+.footer-links {
+    font-size: 0.7em;
+    align-self: baseline;
+    margin: 1em;
+    display: grid;
+}
+.footer-links > a {
+    margin-bottom: 0.3em;
+    color: #5c5c4e;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .footer-bolt-logo {
     padding: 0 0.5em;
     font-weight: bold;
     color: #5c5c4e;
+}
+
+.oct {
+    background-image: url(./public/media/oct.svg);
+    background-size: contain;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
 }
 
