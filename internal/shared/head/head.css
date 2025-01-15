@@ -17,14 +17,15 @@ body, html {
   align-items: center;
 }
 @media screen and (orientation:portrait) {
+}
+@media screen and (orientation:landscape) {
   body, html  {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
   }
-}
-@media screen and (orientation:landscape) {
+
   .wrapper {
     max-width: 80ch;
   }
