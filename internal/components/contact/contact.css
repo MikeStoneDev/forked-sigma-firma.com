@@ -1,7 +1,8 @@
 .contact-outer {
     min-height: 100vh;
     /* background: linear-gradient(0deg, #fffeed 70%, transparent); */
-    background-color: #fffeed;
+    /* background-color: #fffeed; */
+    background-color: #f6f6f6;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -13,16 +14,24 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: stretch;
+    padding: 3em;
 }
 
-.contact-form > input {
+.form-items {
     border-radius: 0.3em;
-    font-size: 2.7em;
+    font-size: 2em;
     padding: 0.4em;
-    background: blanchedalmond;
+    background: var(--white);
     border: none;
     margin: 0.5em;
-    max-width: 25ch;
-    width: 90%;
+    /* max-width: 25ch; */
+    /* width: 90%; */
+}
+
+.contact-butt {
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    cursor: pointer;
 }

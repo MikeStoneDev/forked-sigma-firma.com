@@ -50,7 +50,7 @@ color: #03685f;
     /* text-shadow: 1px 8px 0px #cdcb57; */
     animation: 5s linear boltin;
     animation-fill-mode: forwards;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 @keyframes bgzoom {
   0% {

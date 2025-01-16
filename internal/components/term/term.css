@@ -1,45 +1,41 @@
 .term-outer {
     border-radius: 0.6em;
-    /* background-color: #5f5567; */
     background-color: var(--red);
-    /* animation: 1s linear expando; */
-    /* animation-delay: 0.5s; */
     height: 5.5ch;
     width: calc(100% - 4em);
     margin-top: 7em;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     padding: 1em;
-    /* opacity: 0; */
-    display: flex;
+    display: flex
+;
     flex-direction: row;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    box-shadow: 7px 7px #8a7e709e;
+    flex-wrap: nowrap;
+    box-shadow: 20px 20px #3b3b3bcf;
     overflow: hidden;
     max-width: 50ch;
     margin-left: 1em;
     margin-right: 1em;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0.9;
 }
 
 .term-inner {
     margin: 1em;
-    font-size: 1.3em;
     font-family: monospace;
-    color: var(--darkgrey);
+    color: var(--white);
 }
 .command {
     color: var(--white);
-    font-size: 1.2em;
     font-family: monospace;
+    margin-left: 0.1em;
 }
 
 
 .carat {
     width: 0.5em;
-    height: 1.5em;
-    background-color: #cd5b5b;
+    height: 1.3em;
+    background-color: var(--white);
     padding: 0 0.1em;
     animation: 400ms linear infinite blinky;
 }
@@ -62,12 +58,13 @@
 
 .carat-trick {
     position: absolute;
-    margin-left: 1.93em;
+    margin-left: 1.5em;
     height: 1.5em;
     animation: 2s linear typing;
     display: flex;
     animation-delay: 2s;
     animation-fill-mode:forwards;
+    margin-top: 0.2em;
 }
 @keyframes blinky {
     0% {opacity: 0;}

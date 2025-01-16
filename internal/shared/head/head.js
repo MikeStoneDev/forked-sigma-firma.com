@@ -40,7 +40,11 @@ async function getExample(view) {
 window.onscroll = function() {
     var a = document.getElementById("splash-inner");
     var y = window.scrollY;
-    var f = (y/(window.innerHeight))
-    a.style.backdropFilter = "invert(" + f + ")";
-    a.style.filter = "invert(" + f + ")" + " sepia(" + f + ")" + "hue-rotate(" + (f+f)*300 + "deg)";
+    var f = ((window.innerHeight/20)/y)
+    // a.style.backdropFilter = "invert(" + f + ")";
+    // a.style.filter = "invert(" + f + ")" + " sepia(" + f + ")" + "hue-rotate(" + (f+f)*300 + "deg)";
+    if (f <= 0.04) {
+        f = 0;
+    }
+    a.style.opacity = f;
 }
