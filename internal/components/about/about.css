@@ -1,6 +1,10 @@
 .about-outer {
     min-height: 100vh;
     background: white;
+background-image: url(public/media/orbiter.svg);
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: 25em -11em;
 }
 
 li {
