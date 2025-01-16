@@ -1,7 +1,11 @@
 .about-outer {
     min-height: 100vh;
     background: white;
-
+display: flex
+;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
 }
 
 li {
@@ -29,13 +33,17 @@ margin-top: 2em;
 }
 
 .about-logo {
-    color: black;
+ color: var(--red);
     font-size: 3em;
     text-align: center;
     margin-top: 3em;
     z-index: 5;
     font-weight: bold;
     position: relative;
+    background: #f3f3f3b8;
+    padding: 0.2em 0.5em;
+    backdrop-filter: blur(4px) sepia(1);
+    font-family: "Outfit", serif;
 }
 
 .about-bolt-logo {

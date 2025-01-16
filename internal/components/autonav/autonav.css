@@ -11,6 +11,7 @@
     background-color: var(--white);
     height: 0.3em;
     width: 2.5em;
+    border-radius: 0.1em;
 }
 
 .navbar-outer {
