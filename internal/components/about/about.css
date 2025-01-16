@@ -1,11 +1,10 @@
 .about-outer {
     min-height: 100vh;
-    background: white;
-display: flex
-;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: linear-gradient(358deg, #ffffff 90%, transparent);
 }
 
 li {
@@ -15,9 +14,9 @@ li {
 }
 
 .about-inner > h3 {
-text-align: center;
-color: var(--red);
-margin-top: 2em;
+    text-align: center;
+    color: var(--red);
+    margin-top: 2em;
 }
 
 .about-inner {
@@ -76,6 +75,7 @@ margin-top: 2em;
     }
     .about-outer {
 
+    background: linear-gradient(358deg, #ffffff 90%, transparent);
         width: 100vw;
     }
 }
