@@ -101,7 +101,8 @@
         width: 100%;
         margin-bottom: 2em;
         padding: 0.7em;
-        background: #ffa631;
+        background: var(--white);
+        color: var(--red);
     }
 }
 @keyframes navbar-load {
