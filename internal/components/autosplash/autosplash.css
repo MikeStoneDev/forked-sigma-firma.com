@@ -4,6 +4,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+min-width: 24em;
 }
 .splash-inner {
     background-image: url(public/media/digi.svg);
@@ -17,6 +18,7 @@
     left:0;
     animation: 5s linear bgzoom;
     animation-fill-mode: forwards;
+    filter: opacity(0.4);
 }
 /* .autosplash-outer {} */
 

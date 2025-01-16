@@ -18,7 +18,7 @@
     color: #5c5c4e;
 }
 .footer-logo {
-    color: #fffdda;
+    color: var(--white);
     text-align: center;
     width: 100%;
     display: flex;
@@ -37,7 +37,8 @@
 }
 .footer-links > a {
     margin-bottom: 0.3em;
-    color: #5c5c4e;
+    /* color: #5c5c4e; */
+    color: var(--white);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
