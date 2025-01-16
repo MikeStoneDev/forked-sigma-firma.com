@@ -1,0 +1,26 @@
+.demos-outer {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.demo-title {
+    color: var(--red);
+}
+.demo-media {
+    width: 73%;
+}
+.demo-media > video {
+    max-width: -webkit-fill-available;
+    width: 100%;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.demo-item-first {
+    width: 25%;
+}
