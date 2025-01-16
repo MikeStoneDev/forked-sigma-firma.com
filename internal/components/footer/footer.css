@@ -1,5 +1,5 @@
 .footer-outer {
-    background-color: #ff744d;
+    background-color: var(--red);
     width: 100%;
 }
 .footer-inner {

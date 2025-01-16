@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 :root {
     --html-bg: hsl(44.86deg 11.08% 77.82%);
+    --red: #c05c3f;;
+    --blue: #22a193;
+    --green: green;
+    --yellow: yellow;
+    --orange: orange;
+    --purple: purple;
+    --darkgrey: #535353;
+    --lightgrey: lightgrey;
+    --white: white;
+
 }
 body, html {
   margin: 0;

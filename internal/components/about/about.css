@@ -11,7 +11,7 @@ li {
 
 .about-inner > h3 {
 text-align: center;
-color: #f4904f;
+color: var(--red);
 margin-top: 2em;
 }
 
