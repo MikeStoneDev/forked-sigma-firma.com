@@ -47,12 +47,14 @@
   background: linear-gradient(45deg, #6affd996, #97ff0087, #ffff008f, #ff561f85, transparent);
 }
 .bolt-logo {
-  color: var(--blue);
-  display: inline;
-  /* text-shadow: 1px 8px 0px #cdcb57; */
-  animation: 5s linear boltin;
-  animation-fill-mode: forwards;
-  opacity: 0.9;
+font-size: 1.2em;
+    color: var(--blue);
+    display: inline;
+    animation: 5s linear boltin;
+    animation-fill-mode: forwards;
+    opacity: 0.9;
+    text-shadow: 4px 4px 0px #eb459f75;
+    /* font-style: italic; */
 }
 @keyframes bgzoom {
   0% {
