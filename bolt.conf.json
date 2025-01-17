@@ -2,13 +2,13 @@
   "app": {
     "name": "sigma ⚡︎  firma",
     "command": "",
-    "domain_name": "sigma.hrtsfld.xyz",
+    "domain_name": "sigma-firma.org",
     "version": "0.01",
     "env": {},
     "port": "10529",
     "alertsOn": true,
     "tls_enabled": true,
-    "repo": "https://github.com/hartsfield/sigma.hrtsfld.xyz"
+    "repo": "https://github.com/hartsfield/sigma-firma.org"
   },
   "gcloud": {
     "command": "gcloud",
