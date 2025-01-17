@@ -2,7 +2,7 @@
     min-height: 100vh;
     /* background: linear-gradient(0deg, #fffeed 70%, transparent); */
     /* background-color: #fffeed; */
-    background-color: #f6f6f6;
+    background-color: var(--lightgrey);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;

@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fira+Mono:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 :root {
-    --html-bg: hsl(44.86deg 11.08% 77.82%);
-    --red: #c05c3f;;
-    --blue: #00aebc;
-    --green: green;
-    --yellow: yellow;
-    --orange: orange;
-    --purple: purple;
-    --darkgrey: #535353;
-    --lightgrey: lightgrey;
-    --white: white;
+  --html-bg: hsl(44.86deg 11.08% 77.82%);
+  --red: #c05c3f;;
+  --blue: #00aebc;
+  --green: green;
+  --yellow: yellow;
+  --orange: orange;
+  --purple: purple;
+  --darkgrey: #535353;
+  --lightgrey: #f6f6f6;
+  --white: white;
 
 }
 body, html {
   margin: 0;
-    font-family: "Outfit", serif;
+  font-family: "Outfit", serif;
   font-size: 1em;
 }
 .wrapper {
