@@ -1,9 +1,19 @@
 <div class="template-wrapper contact-outer" id="contact-outer">
-    <form class="contact-form">
-        <input class="form-items" placeholder="name"/>
-        <input class="form-items" placeholder="email" type="email"/>
-        <div class="contact-butt form-items">contact</div>
+    <form class="contact-form" id="formData" name="formData">
+        <input class="form-items" id="contact_phone" name="phone" placeholder="phone"/>
+        <input class="form-items" id="contact_email" name="email" placeholder="email" type="email"/>
+        <input class="form-items" id="contact_last" name="last_name" placeholder="last name"/>
+        <input class="form-items" id="contact_first" name="first_name"  placeholder="first name"/>
+        <div class="contact-cbl">
+            <input class="form-items cbox" id="contact_news" name="news_letter" type="checkbox" checked/>
+            <label class="form-items cbox" for="news_letter">Subscribe to our news letter</label>
+        </div>
+        <div class="contact-cbl">
+            <input class="form-items cbox" id="contact_ques" name="questionnaire" type="checkbox" checked/>
+            <label class="form-items cbox" for="questionnaire">Recieve our questionnaire so we can learn more about your product</label>
+        </div>
+        <div class="contact-butt form-items" id="contact-butt" onclick="postContact()">contact</div>
     </form>
-<style>{{ template "contact.css" . }}</style>
-<script>{{ template "contact.js" . }}</script>
+    <style>{{ template "contact.css" . }}</style>
+    <script>{{ template "contact.js" . }}</script>
 </div>
