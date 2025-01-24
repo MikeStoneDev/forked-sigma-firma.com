@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/sigma-firma/gmailAPI"
 	"github.com/sigma-firma/inboxer"
@@ -28,7 +29,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 
 	// Connect to the gmail API service.
 	ctx := context.Background()
-	srv := gmailAPI.ConnectToService(ctx, gmail.MailGoogleComScope)
+	srv := gmailAPI.ConnectToService(ctx, os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
 	if msg.Send(srv) != nil {
 		log.Println(err)
 		ajaxResponse(w, map[string]string{"success": "false"})

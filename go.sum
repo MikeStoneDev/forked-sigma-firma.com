@@ -29,6 +29,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sigma-firma/gmailAPI v0.0.0-20250124060400-436e5deb90a5 h1:ypfmo2UIz6Y8D1tt3eQa9klBeFX2kygzqfdYE4OKNAw=
 github.com/sigma-firma/gmailAPI v0.0.0-20250124060400-436e5deb90a5/go.mod h1:VPZsCU1WfWFBhgQxNIDPmBjsepyhbnB71kYny3JUeIk=
+github.com/sigma-firma/gmailAPI v0.0.0-20250124203309-45e91af53260 h1:sXYm6Teg6hv9654hleNL52MdVeEcyMWJ0Kk5d2z+lnk=
+github.com/sigma-firma/gmailAPI v0.0.0-20250124203309-45e91af53260/go.mod h1:VPZsCU1WfWFBhgQxNIDPmBjsepyhbnB71kYny3JUeIk=
 github.com/sigma-firma/inboxer v0.0.0-20250124175722-552ea2e10d4d h1:rQbs83YKBNmeRxX1WioPlCOpe53uAJKB2mGN7sOuVaU=
 github.com/sigma-firma/inboxer v0.0.0-20250124175722-552ea2e10d4d/go.mod h1:2GsHqBoYJr9Waa3cyebQIvDAKffwixi58l2ypjsnndc=
 github.com/sigma-firma/inboxer v0.0.0-20250124182724-ccb6b39bb614 h1:pjOTiO77DJelDezeL2wb16gybOOgk39UaALTkynskEg=
