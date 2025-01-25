@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fira+Mono:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
 :root {
   --html-bg: hsl(44.86deg 11.08% 77.82%);
   --red: #c05c3f;;

@@ -24,7 +24,12 @@
 /* .autosplash-outer {} */
 
 .splash-logo {
-  font-family: "Outfit", serif;
+  /* font-family: "Outfit", serif; */
+  font-family: "Noto Serif Display", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-variation-settings:
+    "wdth" 100;
   text-align: center;
   font-size: 6em;
   font-weight: bold;
@@ -58,7 +63,7 @@
     color: #0000008f;
 }
 .bolt-logo {
-font-size: 2em;
+font-size: 3em;
     color: var(--blue);
     display: inline;
     animation: 1s linear boltin;
@@ -66,7 +71,7 @@ font-size: 2em;
     transform: translateX(42px) !important;
     z-index: -1;
     /* opacity: 0.9; */
-    /* text-shadow: 4px 4px 0px #eb459f75; */
+    text-shadow: 17px 20px 0px #c05c3fbd;
     /* font-style: italic; */
 }
 @keyframes bgzoom {
