@@ -9,7 +9,7 @@ async function postContact() {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
 
             cbutt.innerHTML = "sending...";
-            fd.style.filter = "blur(6px)"
+            fd.style.filter = "blur(6px)";
             cbutt.style.backgroundColor = "#c05c3f";
             const response = await fetch("/contact", {
                 method: "POST",
@@ -19,21 +19,18 @@ async function postContact() {
 
             let res = await response.json();
             if (res.success == "true") {
-                cbutt.innerHTML = "Thanks!"
+                cbutt.innerHTML = "Thanks!";
                 cbutt.style.backgroundColor = "white";
                 cbutt.style.color = "#00aebc";
                 cbutt.style.fontSize = "4em";
                 fd.innerHTML = "";
-                fd.style.padding = "0"
+                fd.style.padding = "0";
                 sent = true;
             } else {
-                cbutt.innerHTML = "error"
-                fd.style.filter = "unset"
+                cbutt.innerHTML = "error";
+                fd.style.filter = "unset";
             }
         }
-
-    } else {
-
     }
 }
 function validateFormData(formData) {

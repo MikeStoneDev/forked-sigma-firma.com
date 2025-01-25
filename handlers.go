@@ -23,6 +23,11 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 
+	if cf.Email == "" || cf.FirstName == cf.LastName {
+		ajaxResponse(w, map[string]string{"success": "false", "message": "invalid form data"})
+		return
+	}
+
 	msg := &inboxer.Msg{
 		To:        "leadership@sigma-firma.com",
 		Subject:   "New Contact",
