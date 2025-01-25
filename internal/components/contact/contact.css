@@ -1,7 +1,4 @@
 .contact-outer {
-    /* min-height: 100vh; */
-    /* background: linear-gradient(0deg, #fffeed 70%, transparent); */
-    /* background-color: #fffeed; */
     background-color: var(--lightgrey);
     display: flex;
     flex-direction: column;
@@ -10,6 +7,7 @@
     width: calc(100% - 2em);
     padding-right: 1em;
     padding-left: 1em;
+    padding-bottom: 5em;
 }
 
 .contact-form {
@@ -17,7 +15,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
-        margin-top: 5em;
+    margin-top: 5em;
 }
 
 .form-items {
@@ -27,8 +25,6 @@
     background: var(--white);
     border: none;
     margin: 0.5em;
-    /* max-width: 25ch; */
-    /* width: 90%; */
 }
 
 .contact-butt {

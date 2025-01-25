@@ -4,12 +4,12 @@ async function postContact() {
         var fd = document.getElementById("formData");
         var formData = new FormData(fd);
 
+        cbutt.style.backgroundColor = "#c05c3f";
         if (validateFormData(formData)) {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
 
             cbutt.innerHTML = "sending...";
             fd.style.filter = "blur(6px)";
-            cbutt.style.backgroundColor = "#c05c3f";
             const response = await fetch("/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -43,40 +43,42 @@ async function postContact() {
     }
 }
 function validateFormData(formData) {
-
-    // Check if formData is an instance of FormData
     if (!(formData instanceof FormData)) {
         throw new Error('Invalid argument: formData must be an instance of FormData.');
     }
-
     let isValid = true;
-
-    // Iterate over the form data entries
+    var cbutt = document.getElementById("contact-butt");
     for (let [key, value] of formData.entries()) {
-
-        // Perform validation based on field name
         switch (key) {
-            case 'first_name':
-            case 'last_name':
             case 'phone':
-                if (value.trim() === '') {
-                    console.error(key+' field is required.');
-                    isValid = false;
-                }
+                setInvalid(key);
                 break;
-
             case 'email':
                 if (!validateEmail(value)) {
                     console.error('Invalid email format.');
+                    cbutt.innerHTML = "every field is required.";
                     isValid = false;
                 }
                 break;
-
-                // Add more validation rules for other fields as needed
+            case 'last_name':
+                setInvalid(key);
+                break;
+            case 'first_name':
+                setInvalid(key);
+                break;
         }
     }
-
     return isValid;
+}
+
+function setInvalid(key) {
+    if (value.trim() === '') {
+        console.error(key+' field is required.');
+        cbutt.innerHTML = "every field is required.";
+        var inp = document.getElementById("contact_" +key);
+        inp.style.background = "red";
+        isValid = false;
+    }
 }
 
 function validateEmail(email) {
