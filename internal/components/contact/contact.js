@@ -20,7 +20,10 @@ async function postContact() {
             let res = await response.json();
             if (res.success == "true") {
                 cbutt.innerHTML = "Thanks!"
-                fd.innerHTML = ""
+                cbutt.style.backgroundColor = "white";
+                cbutt.style.Color= "var(--blue)";
+                cbutt.style.fontSize = "6em";
+                fd.innerHTML = "";
                 fd.style.padding = "0"
                 sent = true;
             } else {
