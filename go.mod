@@ -4,6 +4,7 @@ go 1.23.4
 
 require (
 	github.com/sigma-firma/gmailAPI v0.0.0-20250124203309-45e91af53260
+	github.com/sigma-firma/googlesheetsapi v0.0.0-20250125001359-98b5314a0a97
 	github.com/sigma-firma/inboxer v0.0.0-20250124182724-ccb6b39bb614
 	google.golang.org/api v0.218.0
 )
