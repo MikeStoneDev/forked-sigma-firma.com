@@ -38,7 +38,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	_, err = addRow([]interface{}{
 		cf.LastName,
 		cf.FirstName,
-		time.Now().UTC().Format("Jan 02 2006 03:04:05 PM"),
+		time.Now().Local().UTC().Format("Jan 02 2006 03:04:05 PM"),
 		cf.Email,
 		cf.Phone,
 		cf.NewsLetter,
