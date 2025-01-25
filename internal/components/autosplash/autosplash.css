@@ -18,7 +18,7 @@
   left:0;
   animation: 5s linear bgzoom;
   animation-fill-mode: forwards;
-  filter: opacity(0.4);
+  filter: opacity(0.2);
   color: var(--darkgrey);
 }
 /* .autosplash-outer {} */
@@ -44,6 +44,7 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    font-size: 4em;
 }
 .logo-sub {
   color: #03685f;
@@ -60,7 +61,10 @@
     transform: translateX(-15px);
     /* font-style: italic; */
     /* font-family: serif; */
-    color: #0000008f;
+    /* color: #0000008f; */
+    color: #413d30f0;
+font-size: 1.2em;
+    text-shadow: 20px 20px 0px #00b60e59;
 }
 .bolt-logo {
 font-size: 3em;
@@ -71,7 +75,7 @@ font-size: 3em;
     transform: translateX(42px) !important;
     z-index: -1;
     /* opacity: 0.9; */
-    text-shadow: 17px 20px 0px #c05c3fbd;
+    text-shadow: 20px 20px 0px #c05c3fbd;
     /* font-style: italic; */
 }
 @keyframes bgzoom {
