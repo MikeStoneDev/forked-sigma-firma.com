@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/sigma-firma/gmailAPI"
 	ohsheet "github.com/sigma-firma/googlesheetsapi"
@@ -23,7 +24,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	}
 
 	msg := &inboxer.Msg{
-		From:    "me",
+		From:    "noreply@sigma-firma.com",
 		To:      "leadership@sigma-firma.com",
 		Subject: "New Contact",
 		Body:    makeEmailBody(cf),
@@ -32,13 +33,14 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	// Connect to the gmail API service.
 	ctx := context.Background()
 	srv := gmailAPI.ConnectToService(ctx, os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
-	if msg.Send(srv) != nil {
+	err = msg.Send(srv)
+	if err != nil {
 		log.Println(err)
 		ajaxResponse(w, map[string]string{"success": "false"})
 		return
 	}
+	addRow([]interface{}{cf.LastName, cf.FirstName, time.Now().Local().UTC().Format("Jan 02 2006"), cf.Phone, cf.Email, cf.NewsLetter, cf.Questionnaire, false})
 	ajaxResponse(w, map[string]string{"success": "true"})
-	addRow([]interface{}{cf.LastName, cf.FirstName, cf.Phone, cf.Email, cf.NewsLetter, cf.Questionnaire, false})
 }
 
 func addRow(row []interface{}) {
