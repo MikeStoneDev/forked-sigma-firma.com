@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -12,6 +11,7 @@ import (
 	ohsheet "github.com/sigma-firma/googlesheetsapi"
 	"github.com/sigma-firma/inboxer"
 	gmail "google.golang.org/api/gmail/v1"
+	sheets "google.golang.org/api/sheets/v4"
 )
 
 func root(w http.ResponseWriter, r *http.Request) {
@@ -24,26 +24,34 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	}
 
 	msg := &inboxer.Msg{
-		From:    "noreply@sigma-firma.com",
 		To:      "leadership@sigma-firma.com",
 		Subject: "New Contact",
 		Body:    makeEmailBody(cf),
 	}
-
-	// Connect to the gmail API service.
-	ctx := context.Background()
-	srv := gmailAPI.ConnectToService(ctx, os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
-	err = msg.Send(srv)
+	err = bobbyEmail(msg)
 	if err != nil {
 		log.Println(err)
 		ajaxResponse(w, map[string]string{"success": "false"})
 		return
 	}
-	addRow([]interface{}{cf.LastName, cf.FirstName, time.Now().Local().UTC().Format("Jan 02 2006"), cf.Phone, cf.Email, cf.NewsLetter, cf.Questionnaire, false})
+
+	_, err = addRow([]interface{}{cf.LastName, cf.FirstName, time.Now().Local().UTC().Format("Jan 02 2006"), cf.Phone, cf.Email, cf.NewsLetter, cf.Questionnaire, false})
+	if err != nil {
+		log.Println(err)
+		ajaxResponse(w, map[string]string{"success": "false"})
+		return
+	}
 	ajaxResponse(w, map[string]string{"success": "true"})
 }
 
-func addRow(row []interface{}) {
+func bobbyEmail(msg *inboxer.Msg) error {
+	msg.From = "noreply@sigma-firma.com"
+	ctx := context.Background()
+	srv := gmailAPI.ConnectToService(ctx, os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
+	return msg.Send(srv)
+}
+
+func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
 	// Connect to the API
 	sheet := &ohsheet.Access{
 		Token:       os.Getenv("HOME") + "/credentials/sheets-go-quickstart.json",
@@ -56,11 +64,7 @@ func addRow(row []interface{}) {
 
 	// Write to the sheet
 	writeRange := "A2"
-	res, err := sheet.Write(srv, spreadsheetId, writeRange, row)
-	if err != nil {
-		log.Fatalf("Unable to retrieve data from sheet: %v", err)
-	}
-	fmt.Println(res)
+	return sheet.Write(srv, spreadsheetId, writeRange, row)
 }
 func makeEmailBody(cf *contactForm) string {
 	return "Name: " + cf.FirstName + " " + cf.LastName + "\nPhone: " +
