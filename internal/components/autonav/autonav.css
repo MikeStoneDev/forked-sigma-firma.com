@@ -94,7 +94,7 @@
     }
     .nav-portrait > ul > li:hover {
         background: #ffffff;
-        color: #e16f6f;
+        color: var(--red);
     }
     .nav-portrait-logo {
         text-align: center;

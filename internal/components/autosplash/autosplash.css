@@ -29,22 +29,24 @@
   font-optical-sizing: auto;
   font-style: italic;
   font-variation-settings:
-    "wdth" 100;
+  "wdth" 100;
   text-align: center;
   font-size: 6em;
-  font-weight: bold;
+  font-weight: 900;
   padding-top: 20vh;
   text-shadow: 1px 1px 20px #a2cdca;
   animation: 5s ease-out unblur;
   animation-fill-mode: forwards;
   min-width: 6ch;
   /* opacity: 0.87; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 4em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+  position: absolute;
+  text-shadow: 20px 20px 0px #0000004a;
 }
 .logo-sub {
   color: #03685f;
@@ -58,26 +60,19 @@
   background: linear-gradient(45deg, #6affd996, #97ff0087, #ffff008f, #ff561f85, transparent);
 }
 .autosplash-firma {
-    transform: translateX(-20px);
-    /* font-style: italic; */
-    /* font-family: serif; */
-    /* color: #0000008f; */
-    color: #6bd2ce;
-font-size: 1.2em;
-    text-shadow: 20px 20px 0px #00000091;
+  transform: translateX(-20px);
+  color: var(--blue);
+  font-size: 1.2em;
 }
 .bolt-logo {
-font-size: 3em;
-    /* color: var(--blue); */
+  font-size: 3em;
+  /* color: var(--blue); */
   color: var(--red);
-    display: inline;
-    animation: 1s linear boltin;
-    animation-fill-mode: forwards;
-    transform: translateX(20px) !important;
-    z-index: -1;
-    /* opacity: 0.9; */
-    text-shadow: 20px 20px 0px #00000091;
-    /* font-style: italic; */
+  display: inline;
+  animation: 1s linear boltin;
+  animation-fill-mode: forwards;
+  transform: translateX(20px) !important;
+  z-index: -1;
 }
 @keyframes bgzoom {
   0% {

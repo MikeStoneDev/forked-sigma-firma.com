@@ -3,7 +3,7 @@
     background-color: var(--red);
     height: 5.5ch;
     width: calc(100% - 4em);
-    margin-top: 7em;
+    margin-top: 55vh;
     animation-fill-mode: forwards;
     padding: 1em;
     display: flex
