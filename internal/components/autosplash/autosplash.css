@@ -53,8 +53,8 @@
 }
 .autosplash-firma {
     transform: translateX(-15px);
-    font-style: italic;
-    font-family: serif;
+    /* font-style: italic; */
+    /* font-family: serif; */
     color: #0000008f;
 }
 .bolt-logo {
