@@ -34,6 +34,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		ajaxResponse(w, map[string]string{"success": "false"})
 		return
 	}
+	sendConf(cf)
 
 	loc, err := time.LoadLocation("America/New_York")
 	if err != nil {
@@ -55,6 +56,14 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	ajaxResponse(w, map[string]string{"success": "true"})
+}
+func sendConf(c *contactForm) {
+	msg := &inboxer.Msg{
+		To:      c.Email,
+		Subject: "Welcome aboard the ship, captain 🫡",
+		Body:    "Click the following link to fill out our questionnaire:",
+	}
+	bobbyEmail(msg)
 }
 
 func bobbyEmail(msg *inboxer.Msg) error {
