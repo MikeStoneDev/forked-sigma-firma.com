@@ -35,7 +35,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err = addRow([]interface{}{cf.LastName, cf.FirstName, time.Now().Format("Jan 02 2006 03:04"), cf.Email, cf.Phone, cf.NewsLetter, cf.Questionnaire, false})
+	_, err = addRow([]interface{}{cf.LastName, cf.FirstName, time.Now().Format("Jan 02 2006 03:04:05 PM"), cf.Email, cf.Phone, cf.NewsLetter, cf.Questionnaire, false})
 	if err != nil {
 		log.Println(err)
 		ajaxResponse(w, map[string]string{"success": "false"})
