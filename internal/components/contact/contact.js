@@ -21,7 +21,7 @@ async function postContact() {
             if (res.success == "true") {
                 cbutt.innerHTML = "Thanks!"
                 cbutt.style.backgroundColor = "white";
-                cbutt.style.Color= "var(--blue)";
+                cbutt.style.color = "#00aebc";
                 cbutt.style.fontSize = "6em";
                 fd.innerHTML = "";
                 fd.style.padding = "0"
