@@ -8,7 +8,8 @@ async function postContact() {
         if (validateFormData(formData)) {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
 
-            cbutt.innerHTML = "sending..."
+            cbutt.innerHTML = "sending...";
+            cbutt.style.backgroundColor = "#c05c3f";
             const response = await fetch("/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
