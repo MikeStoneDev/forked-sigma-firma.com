@@ -58,24 +58,25 @@
   background: linear-gradient(45deg, #6affd996, #97ff0087, #ffff008f, #ff561f85, transparent);
 }
 .autosplash-firma {
-    transform: translateX(-15px);
+    transform: translateX(-20px);
     /* font-style: italic; */
     /* font-family: serif; */
     /* color: #0000008f; */
-    color: #413d30f0;
+    color: #6bd2ce;
 font-size: 1.2em;
-    text-shadow: 20px 20px 0px #00b60e59;
+    text-shadow: 20px 20px 0px #00000091;
 }
 .bolt-logo {
 font-size: 3em;
-    color: var(--blue);
+    /* color: var(--blue); */
+  color: var(--red);
     display: inline;
     animation: 1s linear boltin;
     animation-fill-mode: forwards;
-    transform: translateX(42px) !important;
+    transform: translateX(20px) !important;
     z-index: -1;
     /* opacity: 0.9; */
-    text-shadow: 20px 20px 0px #c05c3fbd;
+    text-shadow: 20px 20px 0px #00000091;
     /* font-style: italic; */
 }
 @keyframes bgzoom {
