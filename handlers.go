@@ -45,7 +45,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 }
 
 func bobbyEmail(msg *inboxer.Msg) error {
-	msg.From = "noreply@sigma-firma.com"
+	msg.From = "me"
 	ctx := context.Background()
 	srv := gmailAPI.ConnectToService(ctx, os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
 	return msg.Send(srv)
