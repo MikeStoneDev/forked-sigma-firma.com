@@ -9,6 +9,7 @@ async function postContact() {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
 
             cbutt.innerHTML = "sending...";
+            fd.style.filter = "blur(6px)"
             cbutt.style.backgroundColor = "#c05c3f";
             const response = await fetch("/contact", {
                 method: "POST",
@@ -18,10 +19,13 @@ async function postContact() {
 
             let res = await response.json();
             if (res.success == "true") {
-                cbutt.innerHTML = "sent"
+                cbutt.innerHTML = "Thanks!"
+                fd.innerHTML = ""
+                fd.style.padding = "0"
                 sent = true;
             } else {
                 cbutt.innerHTML = "error"
+                fd.style.filter = "unset"
             }
         }
 

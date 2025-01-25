@@ -24,9 +24,11 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	}
 
 	msg := &inboxer.Msg{
-		To:      "leadership@sigma-firma.com",
-		Subject: "New Contact",
-		Body:    makeEmailBody(cf),
+		To:        "leadership@sigma-firma.com",
+		Subject:   "New Contact",
+		Body:      formatContactEmail(cf),
+		ImagePath: "public/media/owlen.png",
+		MimeType:  "png",
 	}
 	err = bobbyEmail(msg)
 	if err != nil {
@@ -60,10 +62,16 @@ func contact(w http.ResponseWriter, r *http.Request) {
 func sendConf(c *contactForm) {
 	msg := &inboxer.Msg{
 		To:      c.Email,
-		Subject: "Welcome aboard the ship, captain 🫡",
-		Body:    "Click the following link to fill out our questionnaire:",
+		Subject: "Welcome aboard the ship, captain",
+		Body: "Click the following link to fill out our questionnaire:" +
+			"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
+		ImagePath: "public/media/owlen.png",
+		MimeType:  "png",
 	}
-	bobbyEmail(msg)
+	err := bobbyEmail(msg)
+	if err != nil {
+		log.Println(err)
+	}
 }
 
 func bobbyEmail(msg *inboxer.Msg) error {
@@ -88,8 +96,11 @@ func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
 	writeRange := "A2"
 	return sheet.Write(srv, spreadsheetId, writeRange, row)
 }
-func makeEmailBody(cf *contactForm) string {
-	return "Name: " + cf.FirstName + " " + cf.LastName + "\nPhone: " +
-		cf.Phone + "\nEmail: " + cf.Email + "\nNews Letter Opt In: " +
-		cf.NewsLetter + "\nQuestionnaire: " + cf.Questionnaire
+func formatContactEmail(cf *contactForm) string {
+	return "<div style=\"white-space: pre-wrap; font-size:2em;\">" +
+		"Name: " + cf.FirstName + " " + cf.LastName +
+		"\nPhone: " + cf.Phone +
+		"\nEmail: " + cf.Email +
+		"\nNews Letter Opt In: " + cf.NewsLetter +
+		"\nQuestionnaire: " + cf.Questionnaire + "</div>"
 }

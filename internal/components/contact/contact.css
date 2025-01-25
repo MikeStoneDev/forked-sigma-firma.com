@@ -1,5 +1,5 @@
 .contact-outer {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* background: linear-gradient(0deg, #fffeed 70%, transparent); */
     /* background-color: #fffeed; */
     background-color: var(--lightgrey);
@@ -8,6 +8,8 @@
     flex-wrap: nowrap;
     justify-content: center;
     width: 100%;
+    padding-right: 1em;
+    padding-left: 1em;
 }
 
 .contact-form {
@@ -15,7 +17,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
-    padding: 3em;
 }
 
 .form-items {
