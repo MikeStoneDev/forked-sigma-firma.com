@@ -19,11 +19,11 @@
   animation: 5s linear bgzoom;
   animation-fill-mode: forwards;
   filter: opacity(0.4);
+  color: var(--darkgrey);
 }
 /* .autosplash-outer {} */
 
 .splash-logo {
-  color: var(--darkgrey);
   font-family: "Outfit", serif;
   text-align: center;
   font-size: 6em;
@@ -33,7 +33,12 @@
   animation: 5s ease-out unblur;
   animation-fill-mode: forwards;
   min-width: 6ch;
-  opacity: 0.87;
+  /* opacity: 0.87; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 .logo-sub {
   color: #03685f;
@@ -46,14 +51,23 @@
   backdrop-filter: sepia(1) blur(2.3px);
   background: linear-gradient(45deg, #6affd996, #97ff0087, #ffff008f, #ff561f85, transparent);
 }
+.autosplash-firma {
+    transform: translateX(-15px);
+    font-style: italic;
+    font-family: serif;
+    color: #0000008f;
+    font-size: 1.2em;
+}
 .bolt-logo {
-font-size: 1.2em;
+font-size: 2em;
     color: var(--blue);
     display: inline;
-    animation: 5s linear boltin;
+    animation: 1s linear boltin;
     animation-fill-mode: forwards;
-    opacity: 0.9;
-    text-shadow: 4px 4px 0px #eb459f75;
+    transform: translateX(42px) !important;
+    z-index: -1;
+    /* opacity: 0.9; */
+    /* text-shadow: 4px 4px 0px #eb459f75; */
     /* font-style: italic; */
 }
 @keyframes bgzoom {
@@ -82,8 +96,8 @@ font-size: 1.2em;
 }
 
 @keyframes boltin {
-  0% {transform: scale(3);}
-  100% {transform: scale(1);}
+  0% {transform: scale(9); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
 }
 .about-img {
   background-image: url(public/media/orbiter.svg);

@@ -1,4 +1,3 @@
-var sent = false;
 async function postContact() {
     if (!sent) {
         var cbutt = document.getElementById("contact-butt");
@@ -19,12 +18,22 @@ async function postContact() {
 
             let res = await response.json();
             if (res.success == "true") {
-                cbutt.innerHTML = "Thanks!";
-                cbutt.style.backgroundColor = "white";
-                cbutt.style.color = "#00aebc";
-                cbutt.style.fontSize = "4em";
-                fd.innerHTML = "";
-                fd.style.padding = "0";
+                var splash = document.getElementById("splash-inner");
+                splash.style.backgroundImage= "url(public/media/hubble.jpg)";
+                splash.style.zIndex = "-2";
+                splash.style.filter = "unset";
+                splash.style.opacity = "1";
+                var asplash = document.getElementById("autosplash-firma");
+                var bl = document.getElementById("bl");
+                asplash.style.color = "white";
+                bl.style.color = "white";
+                bl.style.fontStyle = "italic";
+                asplash.style.opacity = "0.8";
+                bl.style.opacity = "0.8";
+                var about = document.getElementById("about-outer");
+                about.innerHTML = "";
+                var contact = document.getElementById("contact-outer");
+                contact.innerHTML = "";
                 sent = true;
             } else {
                 cbutt.innerHTML = "error";

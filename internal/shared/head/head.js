@@ -23,7 +23,9 @@ function toggleDisplay(elem) {
 }
 
 
+var sent = false;
 window.onscroll = function() {
+    if (!sent) {
     var a = document.getElementById("splash-inner");
     var y = window.scrollY;
     var f = ((window.innerHeight/20)/y)
@@ -33,4 +35,5 @@ window.onscroll = function() {
         f = 0;
     }
     a.style.opacity = f;
+    } 
 }
