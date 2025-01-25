@@ -35,10 +35,14 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	loc, err := time.LoadLocation("America/New_York")
+	if err != nil {
+		log.Println(err)
+	}
 	_, err = addRow([]interface{}{
 		cf.LastName,
 		cf.FirstName,
-		time.Now().Local().UTC().Format("Jan 02 2006 03:04:05 PM"),
+		time.Now().UTC().In(loc).Format("Jan 02 2006 03:04:05 PM"),
 		cf.Email,
 		cf.Phone,
 		cf.NewsLetter,
