@@ -55,3 +55,6 @@ input[type=checkbox]
   padding: 10px;
 }
 
+.invalid {
+     background-color: #ffdece;
+}

@@ -43,42 +43,57 @@ async function postContact() {
     }
 }
 function validateFormData(formData) {
+
+    // Check if formData is an instance of FormData
     if (!(formData instanceof FormData)) {
         throw new Error('Invalid argument: formData must be an instance of FormData.');
     }
+
     let isValid = true;
-    var cbutt = document.getElementById("contact-butt");
+
+    // Iterate over the form data entries
     for (let [key, value] of formData.entries()) {
+
+        // Perform validation based on field name
         switch (key) {
-            case 'phone':
-                setInvalid(key);
+            case 'first_name':
+                isValid = inputinvalid(key, value)
                 break;
+
+            case 'last_name':
+                isValid = inputinvalid(key, value)
+                break;
+
+            case 'phone':
+                isValid = inputinvalid(key, value)
+                break;
+
             case 'email':
                 if (!validateEmail(value)) {
+                    var cbutt = document.getElementById("contact-butt");
                     console.error('Invalid email format.');
                     cbutt.innerHTML = "every field is required.";
-                    isValid = false;
+                    isValid = inputinvalid(key, value)
                 }
                 break;
-            case 'last_name':
-                setInvalid(key);
-                break;
-            case 'first_name':
-                setInvalid(key);
-                break;
+
+                // Add more validation rules for other fields as needed
         }
     }
+
     return isValid;
 }
 
-function setInvalid(key) {
+function inputinvalid(key, value) {
+    var cbutt = document.getElementById("contact-butt");
     if (value.trim() === '') {
         console.error(key+' field is required.');
         cbutt.innerHTML = "every field is required.";
         var inp = document.getElementById("contact_" +key);
         inp.style.background = "red";
-        isValid = false;
+        return false
     }
+    return true
 }
 
 function validateEmail(email) {
