@@ -6,7 +6,6 @@
     width: calc(100% - 2em);
     padding: 0 1em 5em 1em;
     background: linear-gradient(0deg, var(--lightgrey) 59%, transparent 100%);
-    min-height: 90vh;
 }
 
 .contact-form {
@@ -65,3 +64,8 @@ input[type=checkbox]
     background-color: var(--red);
 }
 
+@media screen and (orientation:portrait) {
+    .contact-outer {
+        height: calc(100vh - 2em);
+    }
+}
