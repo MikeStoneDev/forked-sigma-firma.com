@@ -1,27 +1,11 @@
 .contact-outer {
-    background-color: var(--lightgrey);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     width: calc(100% - 2em);
-    padding-right: 1em;
-    padding-left: 1em;
-    padding-bottom: 5em;
-    background: linear-gradient(0deg, var(--lightgrey) 3%, transparent);
+    padding: 0 1em 5em 1em;
     background: linear-gradient(0deg, var(--lightgrey) 59%, transparent 100%);
-}
-
-.space-bg {
-    background-image: url(public/media/hubble.jpg);
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    bottom: 0;
-    z-index: -7;
 }
 
 .contact-form {
@@ -59,9 +43,7 @@
     accent-color: var(--red);
     color: var(--darkgrey);
 }
-input:nth-child(odd) {
-    z-index: 5;
-}
+
 input[type=checkbox]
 {
   /* Double-sized Checkboxes */

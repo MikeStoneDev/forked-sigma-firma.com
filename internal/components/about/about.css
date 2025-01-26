@@ -52,17 +52,8 @@ li {
     font-weight: bold;
     height: 3em;
     max-width: 100vw;
-    color: #f9ff00;
-    text-shadow: 20px 19px #00ffec;
     color: #fcff87;
     text-shadow: 20px 19px #f4904f;
-    /* color: black; */
-    /*  font-size: 3em; */
-    /*  text-align: center; */
-    /*  margin-top: 3em; */
-    /*  z-index: 5; */
-    /*  font-weight: bold; */
-    /*  position: relative; */
 }
 
 @media screen and (orientation:portrait) {
@@ -81,15 +72,13 @@ li {
     }
 }
 .about-bolt {
-font-size: 47em;
+    font-size: 47em;
     text-align: center;
     color: #fff400;
     z-index: -3;
     height: 0;
-    /* text-shadow: 7px 8px #3b3b3bcf; */
     animation: 350ms linear strike;
     animation-fill-mode: forwards;
-    /* animation-delay: 1s; */
     position: absolute;
     width: 100%;
     top: -1em;
@@ -98,10 +87,5 @@ font-size: 47em;
 }
 
 @keyframes strike {
-    0% {
-    }
-    100% {
-    transform: translateX(-1.3em) translateY(70vh);
-    }
-
+    100% {transform: translateX(-1.3em) translateY(70vh);}
 }

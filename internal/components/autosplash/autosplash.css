@@ -5,15 +5,14 @@
   flex-wrap: nowrap;
   align-items: center;
   /* min-width: 24em; */
-min-width: 45vw;
+  min-width: 45vw;
 }
 .splash-zoom {
   animation: 10s linear splzoom;
 }
 @keyframes splzoom {
-  100% {
-    transform: scale(2);
-  }
+  0% {    transform: scale(2);}
+  100% {    transform: scale(1);}
 }
 .splash-inner {
   background-image: url(public/media/digi.svg);
@@ -55,12 +54,12 @@ min-width: 45vw;
   /* text-shadow: 20px 20px 0px #0000004a; */
 }
 .splash-inner-white {
-height: 100%;
-    width: 100%;
-    position: fixed;
-    background: white;
-    z-index: -3;
-  }
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: white;
+  z-index: -3;
+}
 .logo-sub {
   color: #03685f;
   font-size: 1.8em;
@@ -76,7 +75,7 @@ height: 100%;
   transform: translateX(-20px);
   color: var(--blue);
   font-size: 1.2em;
-opacity: 0.8;
+  opacity: 0.8;
 }
 .bolt-logo {
   font-size: 3em;
