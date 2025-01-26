@@ -24,6 +24,7 @@ body, html {
 a {
   text-decoration: none;
   color: var(--blue);
+  font-weight: 500;
 }
 .wrapper {
   display: flex;
