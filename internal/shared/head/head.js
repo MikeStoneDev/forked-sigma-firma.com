@@ -29,12 +29,12 @@ window.onscroll = function() {
         var a = document.getElementById("splash-inner");
         var w = document.getElementById("spw");
         var y = window.scrollY;
-        var f = ((window.innerHeight/(window.innerHeight/40))/y)
-        if (f <= 0.09) {
-            f = 0;
+        if (y <= 1) {
+            y = 1;
         }
-        if (f >= 0.9) {
-            f = 1;
+        var f = (window.innerHeight/(y*40))
+        if (f <= 0.01) {
+            f = 0;
         }
         a.style.opacity = f;
         w.style.opacity = f;

@@ -76,6 +76,7 @@ li {
     }
     .about-outer {
         background: linear-gradient(358deg, #ffffff 90%, transparent);
+        background: linear-gradient(358deg, #ffffff 75%, transparent 97%);
         width: 100vw;
         padding: unset;
     }

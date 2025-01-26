@@ -18,8 +18,8 @@
   left:0;
   animation: 5s linear bgzoom;
   animation-fill-mode: forwards;
-  filter: opacity(0.2);
   color: var(--darkgrey);
+  filter: opacity(0.2);
 }
 /* .autosplash-outer {} */
 
