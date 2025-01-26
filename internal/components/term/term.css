@@ -76,3 +76,8 @@
 }
 
 
+@media screen and (orientation:portrait) {
+    .term-outer {
+        font-size: 1.2em;
+    }
+}
