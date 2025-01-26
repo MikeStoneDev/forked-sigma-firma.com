@@ -64,12 +64,4 @@ input[type=checkbox]
 .invalid-butt {
      background-color: var(--red);
 }
-.contact-bolt {
-    position: absolute;
-    font-size: 56em;
-    text-align: center;
-    width: 100vw;
-    transform: translateY(-30%);
-    color: #fffe87b5;
-    z-index: 1;
-}
+

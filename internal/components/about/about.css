@@ -20,7 +20,6 @@ li {
 }
 
 .about-inner {
-    margin: 6em;
     margin-top: 5em;
     text-align: justify;
     z-index: 5;
@@ -78,6 +77,15 @@ li {
     background: linear-gradient(358deg, #ffffff 90%, transparent);
         width: 100vw;
     }
+}
+.about-bolt {
+    font-size: 19em;
+    text-align: center;
+    width: 100vw;
+    color: black;
+    z-index: 1;
+transform: translateY(-136px);
+    height: 0.2em;
 }
 
 

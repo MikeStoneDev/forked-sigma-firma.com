@@ -106,6 +106,5 @@ func formatContactEmail(cf *contactForm) string {
 		"Name: " + cf.FirstName + " " + cf.LastName +
 		"\nPhone: " + cf.Phone +
 		"\nEmail: " + cf.Email +
-		"\nNews Letter Opt In: " + cf.NewsLetter +
-		"\nQuestionnaire: " + cf.Questionnaire + "</div>"
+		"\nNews Letter Opt In: " + cf.NewsLetter + "</div>"
 }
