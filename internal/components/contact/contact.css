@@ -6,6 +6,7 @@
     width: calc(100% - 2em);
     padding: 0 1em 5em 1em;
     background: linear-gradient(0deg, var(--lightgrey) 59%, transparent 100%);
+    min-height: 100vh;
 }
 
 .contact-form {
