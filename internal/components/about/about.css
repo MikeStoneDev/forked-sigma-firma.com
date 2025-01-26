@@ -74,7 +74,12 @@ li {
         width: 100vw;
         padding: unset;
     }
-    li, p {
+    li {
+        font-size: 1em;
+
+    }
+
+    .about-inner > p {
         font-size: 1em;
     }
 }
