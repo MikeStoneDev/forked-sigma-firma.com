@@ -10,6 +10,7 @@
     flex-wrap: nowrap;
     /* box-shadow: 7px 8px #3b3b3bcf; */
     box-shadow: 7px 8px #e14903cf;
+    box-shadow: 7px 8px #242116cf;
     overflow: hidden;
     max-width: 50ch;
     margin-left: 1em;
@@ -32,7 +33,7 @@
     color: #bb3904;
     font-family: monospace;
     margin-left: 1.6em;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 

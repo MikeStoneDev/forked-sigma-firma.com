@@ -53,7 +53,7 @@
     color: #5c5c4e;
 }
 .curlyb {
-    color: #c63a3a;
+    color: white;
     font-weight: 200;
     font-size: 1.8em;
     height: 1.4em;
@@ -67,19 +67,20 @@
 .oct {
     background-image: url(./public/media/oct.svg);
     background-size: contain;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     margin-right: 0.5em;
+    filter: invert(0.5) sepia(1) saturate(77.8) hue-rotate(-186deg);
 }
 .octin {
     margin-left: 4em;
     font-size: 1em;
 }
 .footer-dev {
-    background: #ffb530;
+    background: #ffcc8e;
     padding: 0.1em 0.4em;
     border-radius: 0.2em;
-color: #99985a;}
+color: var(--red);}
 .footer-span {
     display: flex;
     flex-direction: row;
