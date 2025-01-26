@@ -94,6 +94,7 @@ font-size: 47em;
     width: 100%;
     top: -1em;
     left: 1em;
+    font-weight: 900;
 }
 
 @keyframes strike {
