@@ -74,9 +74,9 @@ li {
         margin-left: 0;
     }
     .about-outer {
-
         background: linear-gradient(358deg, #ffffff 90%, transparent);
         width: 100vw;
+        padding: unset;
     }
 }
 .about-bolt {
