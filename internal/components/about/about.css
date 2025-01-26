@@ -39,6 +39,7 @@ li {
     z-index: 5;
     font-weight: bold;
     position: relative;
+    transform: translateX(0.15em);
 }
 
 .about-bolt-logo {
