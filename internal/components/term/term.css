@@ -75,15 +75,4 @@
     100% { margin-left: 11.83em; }
 }
 
-@keyframes expando {
-    0% {
-        width: 0ch;
-        height: 0ch;
-        opacity: 0;
-    }
-    100% {
-        width: 52ch;
-        height: 5.5ch;
-        opacity: 1;
-    }
-}
+

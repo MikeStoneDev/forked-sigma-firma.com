@@ -4,15 +4,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  /* min-width: 24em; */
   min-width: 45vw;
-}
-.splash-zoom {
-  animation: 10s linear splzoom;
-}
-@keyframes splzoom {
-  0% {    transform: scale(2);}
-  100% {    transform: scale(1);}
 }
 .splash-inner {
   background-image: url(public/media/digi.svg);
@@ -24,13 +16,11 @@
   width: -webkit-fill-available;
   top:0;
   left:0;
-  animation: 5s linear bgzoom;
+  animation: 1s linear bgzoom;
   animation-fill-mode: forwards;
   color: var(--darkgrey);
   filter: opacity(0.2);
 }
-/* .autosplash-outer {} */
-
 .splash-logo {
   font-family: "Noto Serif Display", serif;
   font-optical-sizing: auto;
@@ -40,8 +30,6 @@
   font-size: 6em;
   font-weight: 900;
   padding-top: 20vh;
-  /* animation: 5s ease-out unblur; */
-  animation-fill-mode: forwards;
   min-width: 6ch;
   display: flex;
   flex-direction: row;
@@ -51,7 +39,7 @@
   font-size: 4em;
   position: absolute;
   animation: 1s linear boltin;
-  /* text-shadow: 20px 20px 0px #0000004a; */
+  animation-fill-mode: forwards;
 }
 .splash-inner-white {
   height: 100%;
@@ -65,7 +53,7 @@
   font-size: 1.8em;
   font-weight: bold;
   width: 100%;
-  padding: 0.5em 0.5em 0.5em 4em;
+  padding: 0.5em 0.5em 0.5em 4em;;
   margin-top: 1.2em;
   border-radius: 0.4em;
   backdrop-filter: sepia(1) blur(2.3px);
@@ -80,38 +68,25 @@
 .bolt-logo {
   font-size: 3em;
   color: var(--red);
-  display: inline;
-  animation-fill-mode: forwards;
   transform: translateX(20px) !important;
   z-index: -1;
 }
 @keyframes bgzoom {
-  0% {
-    transform: scale(2);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% {transform: scale(2);}
+  100% {transform: scale(1);}
 }
-
-
 @keyframes scalein {
-  0% {
-  transform: scale(5) rotate(720deg);}
+  0% {transform: scale(5) rotate(720deg);}
 }
 
 @keyframes boltin {
   0% {transform: scale(2); opacity: 0;}
   100% {transform: scale(1); opacity: 1;}
 }
-.about-img {
-  background-image: url(public/media/orbiter.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 10em 2em;
-  top: 83vh;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  filter: sepia(1) saturate(76.5) hue-rotate(185deg);
+.splash-zoom {
+  animation: 10s linear splzoom;
+}
+@keyframes splzoom {
+  0% {    transform: scale(2);}
+  100% {    transform: scale(1);}
 }
