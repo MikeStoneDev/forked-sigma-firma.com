@@ -4,7 +4,6 @@ async function postContact() {
         var fd = document.getElementById("formData");
         var formData = new FormData(fd);
 
-        // cbutt.style.backgroundColor = "#ffdece";
         if (validateFormData(formData)) {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
 
@@ -86,19 +85,19 @@ function validateFormData(formData) {
                     isValid = false;
                     break;
                 }
-                    break;
+                break;
             case 'last_name':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
                     break;
                 }
-                    break;
+                break;
             case 'phone':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
                     break;
                 }
-                    break;
+                break;
             case 'email':
                 console.log(key, value);
                 if (validateEmail(value)) {

@@ -15,20 +15,18 @@
 }
 
 .navbar-outer {
-    display: inline-flex;
-    font-size: 1.1em;
-    position: fixed;
-    /* background: #88d5d8; */
-
+    animation: 0.2s linear navbar-load;
     background-color: var(--red);
     color: var(--white);
-    top: 0;
-    left: 0;
-    width: 100vw;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    font-size: 1.1em;
     justify-content: space-between;
-    animation: 0.2s linear navbar-load;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
     z-index: 101010101010;
 }
 

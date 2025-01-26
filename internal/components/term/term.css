@@ -5,9 +5,7 @@
     width: calc(100% - 4em);
     margin-top: 45vh;
     animation-fill-mode: forwards;
-    /* padding: 1em; */
-    display: flex
-;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     box-shadow: 7px 8px #3b3b3bcf;

@@ -1,24 +1,18 @@
 <div class="navbar-outer">
   <div class="logo-nav" onclick="window.location = window.location.origin">{{.AppName}}</div>
-
   <div class="nav-landscape">
     <ul>
-
       <li onclick="jumpTo('about-outer')">about</li>
       <!-- <li onclick="jumpTo('demos-outer')">demos</li> -->
       <li onclick="jumpTo('contact-outer')">contact</li>
-
     </ul>
   </div>
-
   <div class="nav-portrait" id="nav-portrait">
     <div class="nav-portrait-logo">{{.AppName}}</div>
     <ul>
-
       <li onclick="jumpTo('about-outer')">about</li>
       <!-- <li onclick="jumpTo('demos-outer')">demos</li> -->
       <li onclick="jumpTo('contact-outer')">contact</li>
-
     </ul>
   </div>
 
@@ -27,6 +21,6 @@
     <div class="hamburger"></div>
     <div class="hamburger"></div>
   </div>
-<style>{{ template "autonav.css" }}</style>
-<script>{{ template "autonav.js"}}</script>
+  <style>{{ template "autonav.css" }}</style>
+  <script>{{ template "autonav.js"}}</script>
 </div>
