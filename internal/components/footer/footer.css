@@ -37,14 +37,14 @@
 }
 .footer-links > a {
     margin-bottom: 0.3em;
-    /* color: #5c5c4e; */
-    color: var(--white);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    text-decoration: underline;
     font-weight: 300;
+    align-items: flex-end;
+    font-family: monospace;
+    color: #bd5621;
 }
 
 .footer-bolt-logo {
