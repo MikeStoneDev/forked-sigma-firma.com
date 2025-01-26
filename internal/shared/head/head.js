@@ -29,7 +29,7 @@ window.onscroll = function() {
         var a = document.getElementById("splash-inner");
         var w = document.getElementById("spw");
         var y = window.scrollY;
-        var f = ((window.innerHeight/50)/y)
+        var f = ((window.innerHeight/(window.innerHeight/40))/y)
         if (f <= 0.09) {
             f = 0;
         }

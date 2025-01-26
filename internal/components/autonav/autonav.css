@@ -49,9 +49,13 @@
     .nav-landscape > ul > li {
         margin: 0 1.5em 0 0;
         cursor: pointer;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        border-radius: 0.1em;
     }
     .nav-landscape > ul > li:hover {
-        background-color: #919b0b;
+        color: var(--blue);
+        background-color: var(--white);
     }
     .nav-portrait {
         display: none;

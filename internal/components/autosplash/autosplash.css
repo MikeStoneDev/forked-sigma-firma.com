@@ -47,7 +47,7 @@
 .splash-inner-white {
 height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     background: white;
     z-index: -3;
   }

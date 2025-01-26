@@ -3,9 +3,9 @@
     background-color: var(--red);
     height: 5.5ch;
     width: calc(100% - 4em);
-    margin-top: 55vh;
+    margin-top: 45vh;
     animation-fill-mode: forwards;
-    padding: 1em;
+    /* padding: 1em; */
     display: flex
 ;
     flex-direction: row;
