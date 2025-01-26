@@ -4,8 +4,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    background: linear-gradient(358deg, #ffffff 90%, transparent);
-    background: linear-gradient(358deg, #ffffff 81%, #d8d8d8ba 90%, transparent 100%);
+    background: linear-gradient(358deg, #ffffff 81%, transparent 100%);
     padding: 2em;
 }
 
