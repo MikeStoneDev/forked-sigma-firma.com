@@ -83,13 +83,13 @@ li {
 .about-bolt {
 font-size: 47em;
     text-align: center;
-    color: #f6ff00;
+    color: #fff400;
     z-index: -3;
     height: 0;
-    text-shadow: 5px 7px #aba42b4a;
+    /* text-shadow: 7px 8px #3b3b3bcf; */
     animation: 350ms linear strike;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
+    /* animation-delay: 1s; */
     position: absolute;
     width: 100%;
     top: -1em;

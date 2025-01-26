@@ -10,7 +10,7 @@
 ;
     flex-direction: row;
     flex-wrap: nowrap;
-    box-shadow: 20px 20px #3b3b3bcf;
+    box-shadow: 7px 8px #3b3b3bcf;
     overflow: hidden;
     max-width: 50ch;
     margin-left: 1em;
