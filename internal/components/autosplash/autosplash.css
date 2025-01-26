@@ -24,21 +24,17 @@
 /* .autosplash-outer {} */
 
 .splash-logo {
-  /* font-family: "Outfit", serif; */
   font-family: "Noto Serif Display", serif;
   font-optical-sizing: auto;
   font-style: italic;
-  font-variation-settings:
-  "wdth" 100;
+  font-variation-settings: "wdth" 100;
   text-align: center;
   font-size: 6em;
   font-weight: 900;
   padding-top: 20vh;
-  text-shadow: 1px 1px 20px #a2cdca;
   animation: 5s ease-out unblur;
   animation-fill-mode: forwards;
   min-width: 6ch;
-  /* opacity: 0.87; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -46,8 +42,15 @@
   justify-content: center;
   font-size: 4em;
   position: absolute;
-  text-shadow: 20px 20px 0px #0000004a;
+  /* text-shadow: 20px 20px 0px #0000004a; */
 }
+.splash-inner-white {
+height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+    z-index: -3;
+  }
 .logo-sub {
   color: #03685f;
   font-size: 1.8em;
@@ -66,7 +69,6 @@
 }
 .bolt-logo {
   font-size: 3em;
-  /* color: var(--blue); */
   color: var(--red);
   display: inline;
   animation: 1s linear boltin;

@@ -5,6 +5,7 @@
     flex-wrap: nowrap;
     align-items: center;
     background: linear-gradient(358deg, #ffffff 90%, transparent);
+    padding: 2em;
 }
 
 li {
@@ -74,7 +75,7 @@ li {
     }
     .about-outer {
 
-    background: linear-gradient(358deg, #ffffff 90%, transparent);
+        background: linear-gradient(358deg, #ffffff 90%, transparent);
         width: 100vw;
     }
 }
@@ -82,9 +83,9 @@ li {
     font-size: 19em;
     text-align: center;
     width: 100vw;
-    color: black;
+    color: var(--darkgrey);
     z-index: 1;
-transform: translateY(-136px);
+    transform: translateY(-136px);
     height: 0.2em;
 }
 

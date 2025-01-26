@@ -8,6 +8,19 @@
     padding-right: 1em;
     padding-left: 1em;
     padding-bottom: 5em;
+    background: linear-gradient(181deg, var(--white) 3%, transparent);
+}
+
+.space-bg {
+    background-image: url(public/media/hubble.jpg);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    z-index: -7;
 }
 
 .contact-form {
