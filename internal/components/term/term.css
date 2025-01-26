@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    box-shadow: 7px 8px #3b3b3bcf;
+    /* box-shadow: 7px 8px #3b3b3bcf; */
+    box-shadow: 7px 8px #e14903cf;
     overflow: hidden;
     max-width: 50ch;
     margin-left: 1em;
@@ -16,17 +17,22 @@
     align-items: center;
     justify-content: flex-start;
     opacity: 0.9;
+    font-style: italic;
+    padding-left: 1em;
 }
 
 .term-inner {
-    margin: 1em;
     font-family: monospace;
     color: var(--white);
+    font-size: 1.7em;
+    font-weight: bold;
+    transform: translateY(1px);
 }
 .command {
-    color: var(--white);
+    color: #bb3904;
     font-family: monospace;
-    margin-left: 0.1em;
+    margin-left: 1.6em;
+    font-weight: bold;
 }
 
 
@@ -36,6 +42,7 @@
     background-color: var(--white);
     padding: 0 0.1em;
     animation: 400ms linear infinite blinky;
+    background-color: #ffd400;
 }
 
 .trick {
@@ -56,7 +63,7 @@
 
 .carat-trick {
     position: absolute;
-    margin-left: 1.5em;
+    margin-left: 1.4em;
     height: 1.5em;
     animation: 2s linear typing;
     display: flex;

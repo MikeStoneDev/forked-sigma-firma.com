@@ -63,6 +63,7 @@
   transform: translateX(-20px);
   color: var(--blue);
   font-size: 1.2em;
+
   opacity: 0.8;
 }
 .bolt-logo {
@@ -70,6 +71,7 @@
   color: var(--red);
   transform: translateX(20px) !important;
   z-index: -1;
+
 }
 /* .octSig */
 @keyframes bgzoom {
