@@ -12,6 +12,7 @@ li {
     margin-bottom: 0.5em;
     margin-right: 2em;
     text-align: left;
+    font-size: 1.25em;
 }
 
 .about-inner > h3 {
@@ -29,6 +30,8 @@ li {
 
 .about-inner > p {
     padding-bottom: 1em;
+    font-size: 1.25em;
+    font-weight: 200;
 }
 
 .about-logo {
