@@ -74,6 +74,9 @@ li {
         width: 100vw;
         padding: unset;
     }
+    li, p {
+        font-size: 1em;
+    }
 }
 .about-bolt {
     font-size: 47em;
