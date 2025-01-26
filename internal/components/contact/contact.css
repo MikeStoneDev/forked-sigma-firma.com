@@ -8,7 +8,7 @@
     padding-right: 1em;
     padding-left: 1em;
     padding-bottom: 5em;
-    background: linear-gradient(181deg, var(--white) 3%, transparent);
+    background: linear-gradient(0deg, var(--lightgrey) 3%, transparent);
 }
 
 .space-bg {

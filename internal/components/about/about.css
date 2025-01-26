@@ -86,7 +86,7 @@ li {
     width: 100vw;
     color: var(--darkgrey);
     z-index: 1;
-    transform: translateY(-136px);
+    transform: translateY(-110px);
     height: 0.2em;
 }
 
