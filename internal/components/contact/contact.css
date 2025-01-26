@@ -16,6 +16,7 @@
     flex-wrap: nowrap;
     align-items: stretch;
     margin-top: 5em;
+    z-index: 2;
 }
 
 .form-items {
@@ -57,4 +58,18 @@ input[type=checkbox]
 
 .invalid {
      background-color: #ffdece;
+     color: black;
+}
+
+.invalid-butt {
+     background-color: var(--red);
+}
+.contact-bolt {
+    position: absolute;
+    font-size: 56em;
+    text-align: center;
+    width: 100vw;
+    transform: translateY(-30%);
+    color: #fffe87b5;
+    z-index: 1;
 }

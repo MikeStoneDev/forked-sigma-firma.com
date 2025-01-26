@@ -1,10 +1,10 @@
+var cbutt = document.getElementById("contact-butt");
 async function postContact() {
     if (!sent) {
-        var cbutt = document.getElementById("contact-butt");
         var fd = document.getElementById("formData");
         var formData = new FormData(fd);
 
-        cbutt.style.backgroundColor = "#c05c3f";
+        // cbutt.style.backgroundColor = "#ffdece";
         if (validateFormData(formData)) {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
 
@@ -36,19 +36,42 @@ async function postContact() {
                 contact.innerHTML = "";
                 sent = true;
             } else {
-                cbutt.innerHTML = "error";
                 fd.style.filter = "unset";
             }
+        } else {
+            cbutt.classList.add("invalid-butt");
         }
     }
 }
-function validateFormData(formData) {
+var form = document.getElementById("formData");
+var formData_ = new FormData(form);
+form.addEventListener("input", function () {
+    cbutt.innerHTML = "contact";
+    cbutt.classList.remove("invalid-butt");
 
+    for (let [key, value] of formData_.entries()) {
+        switch (key) {
+            case 'first_name':
+                var inp = document.getElementById("contact_" +key);
+                inp.classList.remove("invalid");
+            case 'last_name':
+                var inp = document.getElementById("contact_" +key);
+                inp.classList.remove("invalid");
+            case 'phone':
+                var inp = document.getElementById("contact_" +key);
+                inp.classList.remove("invalid");
+            case 'email':
+                var inp = document.getElementById("contact_" +key);
+                inp.classList.remove("invalid");
+        }
+    }
+});
+
+function validateFormData(formData) {
     // Check if formData is an instance of FormData
     if (!(formData instanceof FormData)) {
         throw new Error('Invalid argument: formData must be an instance of FormData.');
     }
-
     let isValid = true;
 
     // Iterate over the form data entries
@@ -57,42 +80,48 @@ function validateFormData(formData) {
         // Perform validation based on field name
         switch (key) {
             case 'first_name':
-                isValid = inputinvalid(key, value)
-                break;
-
-            case 'last_name':
-                isValid = inputinvalid(key, value)
-                break;
-
-            case 'phone':
-                isValid = inputinvalid(key, value)
-                break;
-
-            case 'email':
-                if (!validateEmail(value)) {
-                    var cbutt = document.getElementById("contact-butt");
-                    console.error('Invalid email format.');
-                    cbutt.innerHTML = "every field is required.";
-                    isValid = inputinvalid(key, value)
+                if (!inputinvalid(key, value)) {
+                    isValid = false;
+                    break;
                 }
+                    break;
+            case 'last_name':
+                if (!inputinvalid(key, value)) {
+                    isValid = false;
+                    break;
+                }
+                    break;
+            case 'phone':
+                if (!inputinvalid(key, value)) {
+                    isValid = false;
+                    break;
+                }
+                    break;
+            case 'email':
+                console.log(key, value);
+                if (validateEmail(value)) {
+                    isValid = true
+                    break;
+                }
+                var inp = document.getElementById("contact_" +key);
+                inp.classList.add("invalid");
+                cbutt.innerHTML = "invalid email";
+                isValid = false
                 break;
-
-                // Add more validation rules for other fields as needed
         }
     }
-
     return isValid;
+
 }
 
 function inputinvalid(key, value) {
-    var cbutt = document.getElementById("contact-butt");
+    var inp = document.getElementById("contact_" +key);
     if (value.trim() === '') {
-        console.error(key+' field is required.');
-        cbutt.innerHTML = "every field is required.";
-        var inp = document.getElementById("contact_" +key);
-        inp.style.background = "red";
+        cbutt.innerHTML = "every field is required";
+        inp.classList.add("invalid");
         return false
     }
+    inp.classList.remove("invalid");
     return true
 }
 
