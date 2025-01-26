@@ -4,7 +4,16 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  min-width: 24em;
+  /* min-width: 24em; */
+min-width: 45vw;
+}
+.splash-zoom {
+  animation: 10s linear splzoom;
+}
+@keyframes splzoom {
+  100% {
+    transform: scale(2);
+  }
 }
 .splash-inner {
   background-image: url(public/media/digi.svg);
