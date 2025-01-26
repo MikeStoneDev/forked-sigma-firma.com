@@ -81,15 +81,26 @@ li {
     }
 }
 .about-bolt {
-     font-size: 47em;
+font-size: 47em;
     text-align: center;
-    width: 100vw;
-    color: #ffec0094;
-    z-index: 3;
-    transform: translateY(-234px);
+    color: #f6ff00;
+    z-index: -3;
     height: 0;
-    text-shadow: 5px 7px #4040404a;
-
+    text-shadow: 5px 7px #aba42b4a;
+    animation: 350ms linear strike;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    position: absolute;
+    width: 100%;
+    top: -1em;
+    left: 1em;
 }
 
+@keyframes strike {
+    0% {
+    }
+    100% {
+    transform: translateX(-1.3em) translateY(70vh);
+    }
 
+}
