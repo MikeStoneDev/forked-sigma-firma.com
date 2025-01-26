@@ -67,5 +67,6 @@ input[type=checkbox]
 @media screen and (orientation:portrait) {
     .contact-outer {
         height: calc(100vh - 2em);
+        justify-content: flex-end;
     }
 }
