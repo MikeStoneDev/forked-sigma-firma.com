@@ -22,10 +22,18 @@ li {
 }
 
 .about-inner {
-    margin-top: 5em;
+    /* margin-top: 5em; */
     text-align: justify;
     z-index: 5;
     position: relative;
+}
+.about-chart {
+    background-image: url(public/media/chart1.png);
+    height: 38em;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 80ch;
 }
 
 .about-inner > p {
