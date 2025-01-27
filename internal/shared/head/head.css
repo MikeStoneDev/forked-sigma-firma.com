@@ -16,6 +16,9 @@
   --white: white;
 
 }
+::selection {
+  background: yellow;
+}
 body, html {
   margin: 0;
   font-family: "Outfit", serif;
