@@ -22,6 +22,11 @@ body, html {
   font-size: 1em;
   overflow-x: hidden;
   max-width: 100%;
+  display: flex
+  ;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -36,18 +41,21 @@ a {
   align-items: center;
   overflow-x: hidden;
   max-width: 100%;
-  position: relative;
+  /* position: relative; */
 }
 @media screen and (orientation:portrait) {
+  /* body { */
+  /*   /1* position: relative; *1/ */
+  /* } */
 }
 @media screen and (orientation:landscape) {
-  body, html  {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    scroll-behavior:smooth;
-  }
+  /* body, html  { */
+  /*   display: flex; */
+  /*   flex-direction: column; */
+  /*   flex-wrap: nowrap; */
+  /*   align-items: center; */
+  /*   scroll-behavior:smooth; */
+  /* } */
 
   .wrapper {
     max-width: 80ch;
