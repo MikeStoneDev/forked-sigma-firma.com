@@ -40,14 +40,17 @@
 }
 .term-dreams {
     margin-right: 1em;
-    color: #aa7ab8;
+    /* color: #aa7ab8; */
+    color: white;
 }
 .term-of {
-    color: #94fff6;
+    /* color: #94fff6; */
+    color: white;
 }
 
 .term-inf {
-    color: #fffb00;
+    /* color: #fffb00; */
+    color: white;
     text-shadow: 0px 0px 7px #fffa00;
     font-style: italic;
 }
