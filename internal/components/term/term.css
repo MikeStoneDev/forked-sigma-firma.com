@@ -20,10 +20,9 @@
     opacity: 0.9;
     font-style: italic;
     padding: 0 1em;
-    background-image: url();
+    background-image: url(public/media/hubble.jpg);
 
-    background-image: linear-gradient(0deg, transparent 90%, red), url(public/media/hubble.jpg);
-    background-image: linear-gradient(331deg, #00000000 25%, #000bff), url(public/media/hubble.jpg);
+    /* background-image: linear-gradient(331deg, #00000000 25%, #000bff), url(public/media/hubble.jpg); */
     background-size: contain;
     animation: 2s linear expand-term;
     animation-delay: 3.8s;
