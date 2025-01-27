@@ -6,6 +6,7 @@
   align-items: center;
   min-width: 45vw;
   width:100%;
+  position: fixed;
 }
 .splash-inner {
   background-image: url(public/media/digi.svg);
@@ -21,6 +22,12 @@
   animation-fill-mode: forwards;
   color: var(--darkgrey);
   filter: opacity(0.2);
+  display: flex
+  ;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
 }
 .splash-logo {
   font-family: "Noto Serif Display", serif;

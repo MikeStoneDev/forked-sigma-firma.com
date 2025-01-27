@@ -26,8 +26,9 @@ function toggleDisplay(elem) {
 var sent = false;
 window.onscroll = function() {
     if (!sent) {
-        var a = document.getElementById("splash-inner");
-        var w = document.getElementById("spw");
+        var a = document.getElementById("autosplash");
+        // var w = document.getElementById("spw");
+        // var u = document.getElementById("autosplash-firma");
         var y = window.scrollY;
         if (y <= 1) {
             y = 1;
@@ -37,6 +38,7 @@ window.onscroll = function() {
             f = 0;
         }
         a.style.opacity = f;
-        w.style.opacity = f;
+        // w.style.opacity = f;
+        // u.style.opacity = f;
     } 
 }

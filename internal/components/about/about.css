@@ -6,6 +6,7 @@
     align-items: center;
     background: linear-gradient(358deg, #ffffff 81%, transparent 100%);
     padding: 2em;
+    margin-top: 100vh;
 }
 
 li {
@@ -56,6 +57,7 @@ li {
     z-index: 5;
     font-weight: bold;
     position: relative;
+    margin: 0 0 3em 0;
     transform: translateX(0.15em);
 }
 
