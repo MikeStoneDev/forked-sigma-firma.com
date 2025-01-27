@@ -34,7 +34,7 @@ async function postContact() {
                 var foot = document.getElementById("footer-outer");
                 foot.innerHTML = "";
                 sent = true;
-                setTimeout(location.reload, 3000);
+                setTimeout(function() {location.reload()}, 5000);
             } else {
                 fd.style.filter = "unset";
             }

@@ -27,18 +27,14 @@ var sent = false;
 window.onscroll = function() {
     if (!sent) {
         var a = document.getElementById("autosplash");
-        // var w = document.getElementById("spw");
-        // var u = document.getElementById("autosplash-firma");
         var y = window.scrollY;
         if (y <= 1) {
             y = 1;
         }
         var f = (window.innerHeight/(y*40))
-        if (f <= 0.01) {
+        if (f <= 0.031) {
             f = 0;
         }
         a.style.opacity = f;
-        // w.style.opacity = f;
-        // u.style.opacity = f;
     } 
 }
