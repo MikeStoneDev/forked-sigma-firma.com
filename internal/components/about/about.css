@@ -40,6 +40,7 @@ li {
     background-size: contain;
     max-width: 87ch;
     max-height: 50em;
+    margin: 2em 0 2em 0;
 
 }
 
@@ -57,7 +58,6 @@ li {
     z-index: 5;
     font-weight: bold;
     position: relative;
-    margin: 0 0 3em 0;
     transform: translateX(0.15em);
 }
 
