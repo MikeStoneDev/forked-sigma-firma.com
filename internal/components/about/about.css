@@ -64,6 +64,7 @@ li {
     .about-inner {
         margin-right: 2em;
         margin-left: 2em;
+        width: calc(100vw - 4em);
     }
     .about-bolt-logo {
         margin-left: 0;

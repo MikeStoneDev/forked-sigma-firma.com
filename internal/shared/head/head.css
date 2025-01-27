@@ -47,6 +47,9 @@ a {
   /* body { */
   /*   /1* position: relative; *1/ */
   /* } */
+  .wrapper {
+    max-width: 100%;
+  }
 }
 @media screen and (orientation:landscape) {
   /* body, html  { */
