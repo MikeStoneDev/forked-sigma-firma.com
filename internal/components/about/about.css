@@ -30,14 +30,16 @@ li {
     max-width: 80ch;
 }
 .about-chart {
+
     background-image: url(public/media/ch.png);
     background-position: center;
-    height: 73vw;
+    height: 55vw;
     width: 100vw;
     background-repeat: no-repeat;
     background-size: contain;
-    max-width: 97ch;
+    max-width: 87ch;
     max-height: 50em;
+
 }
 
 .about-inner > p {
