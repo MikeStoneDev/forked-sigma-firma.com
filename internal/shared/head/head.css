@@ -27,6 +27,7 @@ body, html {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  position: relative;
 }
 a {
   text-decoration: none;
