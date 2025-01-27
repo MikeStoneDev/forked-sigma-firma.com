@@ -96,7 +96,7 @@
   100% {transform: scale(1); opacity: 1;}
 }
 .splash-zoom {
-  animation: 10s linear splzoom;
+  animation: 3s linear splzoom;
 }
 @keyframes splzoom {
   0% {    transform: scale(2);}

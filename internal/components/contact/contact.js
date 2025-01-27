@@ -34,7 +34,7 @@ async function postContact() {
                 var foot = document.getElementById("footer-outer");
                 foot.innerHTML = "";
                 sent = true;
-                splash.onclick = location.reload();
+                setTimeout(location.reload, 3000);
             } else {
                 fd.style.filter = "unset";
             }
