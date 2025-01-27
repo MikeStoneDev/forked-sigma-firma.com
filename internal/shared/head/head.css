@@ -41,7 +41,7 @@ a {
   align-items: center;
   overflow-x: hidden;
   max-width: 100%;
-  /* position: relative; */
+  position: relative;
 }
 @media screen and (orientation:portrait) {
   /* body { */
