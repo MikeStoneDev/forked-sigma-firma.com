@@ -5,6 +5,7 @@
   flex-wrap: nowrap;
   align-items: center;
   min-width: 45vw;
+  width:100%;
 }
 .splash-inner {
   background-image: url(public/media/digi.svg);
@@ -36,18 +37,18 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  font-size: 4em;
+  font-size: 3.5em;
   position: absolute;
   animation: 1s linear boltin;
   animation-fill-mode: forwards;
 }
-.splash-inner-white {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  background: white;
-  z-index: -3;
-}
+/* .splash-inner-white { */
+/*   height: 100%; */
+/*   width: 100%; */
+/*   position: fixed; */
+/*   background: white; */
+/*   z-index: -3; */
+/* } */
 .logo-sub {
   color: #03685f;
   font-size: 1.8em;
