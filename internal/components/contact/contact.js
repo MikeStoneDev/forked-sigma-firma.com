@@ -18,11 +18,9 @@ async function postContact() {
             let res = await response.json();
             if (res.success == "true") {
                 var splash = document.getElementById("splash-inner");
-                splash.onclick = function() {
-                    window.location = "https://sigma-firma.com/";
-                }
+                document.getElementById("autosplash").style.opacity = "1";
                 document.getElementById("term-command").innerHTML = "welcome --to=destiny;";
-
+                document.getElementById("term-outer").style.position = "fixed";
                 splash.style.backgroundImage = "url(public/media/hubble.jpg)";
                 splash.style.backgroundSize = "contain";
                 splash.style.zIndex = "-2";
@@ -36,6 +34,7 @@ async function postContact() {
                 var foot = document.getElementById("footer-outer");
                 foot.innerHTML = "";
                 sent = true;
+                splash.onclick = location.reload();
             } else {
                 fd.style.filter = "unset";
             }
