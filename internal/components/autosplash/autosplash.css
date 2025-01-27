@@ -7,6 +7,7 @@
   min-width: 45vw;
   width:100%;
   position: fixed;
+  z-index: -10;
 }
 .splash-inner {
   background-image: url(public/media/digi.svg);

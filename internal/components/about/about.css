@@ -33,7 +33,7 @@ li {
 .about-chart {
     background-image: url(public/media/flow.png);
     background-position: center;
-    height: 65vw;
+    height: 35vw;
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -100,6 +100,10 @@ li {
 
     .about-inner > p {
         font-size: 1em;
+    }
+    .about-chart {
+
+        height: 63vw;
     }
 }
 .about-bolt {
