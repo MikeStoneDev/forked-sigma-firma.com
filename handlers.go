@@ -26,13 +26,13 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		To:        "leadership@sigma-firma.com",
 		Subject:   "New Contact",
 		Body:      formatContactEmail(cf),
-		ImagePath: "public/media/owlen.png",
-		MimeType:  "png",
+		ImagePath: "",
+		MimeType:  "",
 	}
 	err = bobbyEmail(msg)
 	if err != nil {
 		log.Println(err)
-		ajaxResponse(w, map[string]string{"success": "false"})
+		ajaxResponse(w, map[string]string{"success": "false", "message": "invalid form data"})
 		return
 	}
 	sendConf(cf)
@@ -53,7 +53,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	})
 	if err != nil {
 		log.Println(err)
-		ajaxResponse(w, map[string]string{"success": "false"})
+		ajaxResponse(w, map[string]string{"success": "false", "message": "invalid form data"})
 		return
 	}
 	ajaxResponse(w, map[string]string{"success": "true"})

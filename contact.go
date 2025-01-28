@@ -18,8 +18,8 @@ func sendConf(c *contactForm) {
 		Subject: "Welcome aboard the ship, captain",
 		Body: "Click the following link to fill out our questionnaire:" +
 			"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
-		ImagePath: "public/media/owlen.png",
-		MimeType:  "png",
+		ImagePath: "",
+		MimeType:  "",
 	}
 	err := bobbyEmail(msg)
 	if err != nil {
