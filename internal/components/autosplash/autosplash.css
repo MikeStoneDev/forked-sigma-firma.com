@@ -31,6 +31,7 @@
   font-size: 3.5em;
   animation: 1s linear boltin;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 .autosplash-firma {
   transform: translateX(-20px);

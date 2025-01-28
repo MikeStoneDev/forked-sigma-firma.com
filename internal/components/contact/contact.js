@@ -1,28 +1,8 @@
 var cbutt = document.getElementById("contact-butt");
-var form = document.getElementById("formData");
-var formData = new FormData(form);
-form.addEventListener("input", function () {
-    cbutt.innerHTML = "contact";
-    cbutt.classList.remove("invalid-butt");
-    for (let [key, value] of formData_.entries()) {
-        switch (key) {
-            case 'first_name':
-                var inp = document.getElementById("contact_" +key);
-                inp.classList.remove("invalid");
-            case 'last_name':
-                var inp = document.getElementById("contact_" +key);
-                inp.classList.remove("invalid");
-            case 'phone':
-                var inp = document.getElementById("contact_" +key);
-                inp.classList.remove("invalid");
-            case 'email':
-                var inp = document.getElementById("contact_" +key);
-                inp.classList.remove("invalid");
-        }
-    }
-});
 async function postContact() {
     if (!sent) {
+        var form = document.getElementById("formData");
+        var formData = new FormData(form);
         if (validateFormData(formData)) {
             var fd_s =     JSON.stringify(Object.fromEntries(formData));
             cbutt.innerHTML = "sending...";
@@ -53,6 +33,24 @@ async function postContact() {
         }
     }
 }
+var form = document.getElementById("formData");
+var formData = new FormData(form);
+form.addEventListener("input", function () {
+    cbutt.innerHTML = "contact";
+    cbutt.classList.remove("invalid-butt");
+    for (let [key, value] of formData.entries()) {
+        switch (key) {
+            case 'first_name':
+                document.getElementById("contact_" +key).classList.remove("invalid");
+            case 'last_name':
+                document.getElementById("contact_" +key).classList.remove("invalid");
+            case 'phone':
+                document.getElementById("contact_" +key).classList.remove("invalid");
+            case 'email':
+                document.getElementById("contact_" +key).classList.remove("invalid");
+        }
+    }
+});
 function validateFormData(formData) {
     if (!(formData instanceof FormData)) {
         throw new Error('Invalid argument: formData must be an instance of FormData.');
@@ -81,11 +79,11 @@ function validateFormData(formData) {
                 }
                 break;
             case 'email':
-                if (validateEmail(value)) {
+                var inp = document.getElementById("contact_" +key);
+                if (validateEmail(inp.value)) {
                     isValid = true
                     break;
                 }
-                var inp = document.getElementById("contact_" +key);
                 inp.classList.add("invalid");
                 cbutt.innerHTML = "invalid email";
                 isValid = false
@@ -95,8 +93,9 @@ function validateFormData(formData) {
     return isValid;
 }
 function inputinvalid(key, value) {
+    console.log(key, value, "dopkdpok")
     var inp = document.getElementById("contact_" +key);
-    if (value.trim() === '') {
+    if (inp.value.trim() === '') {
         cbutt.innerHTML = "every field is required";
         inp.classList.add("invalid");
         return false
