@@ -7,7 +7,6 @@
     padding: 0 1em 5em 1em;
     background: linear-gradient(0deg, var(--lightgrey) 59%, transparent 100%);
 }
-
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -15,7 +14,6 @@
     align-items: stretch;
     margin-top: 5em;
 }
-
 .form-items {
     border-radius: 0.3em;
     font-size: 2em;
@@ -24,7 +22,6 @@
     border: none;
     margin: 0.5em;
 }
-
 .contact-butt {
     background-color: var(--blue);
     color: var(--white);
@@ -32,7 +29,6 @@
     cursor: pointer;
     z-index: 10;
 }
-
 .contact-cbl {
     margin: 1.5em;
     display: flex;
@@ -43,9 +39,7 @@
     accent-color: var(--red);
     color: var(--darkgrey);
 }
-
-input[type=checkbox]
-{
+input[type=checkbox] {
     /* Double-sized Checkboxes */
     -ms-transform: scale(2); /* IE */
     -moz-transform: scale(2); /* FF */
@@ -54,16 +48,13 @@ input[type=checkbox]
     transform: scale(2);
     padding: 10px;
 }
-
 .invalid {
     background-color: #ffdece;
     color: black;
 }
-
 .invalid-butt {
     background-color: var(--red);
 }
-
 @media screen and (orientation:portrait) {
     .contact-outer {
         height: calc(100vh - 2em);

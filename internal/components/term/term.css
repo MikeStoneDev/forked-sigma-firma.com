@@ -1,48 +1,34 @@
 .term-outer {
-    border-radius: 0.6em;
-    background-color: var(--red);
-    /* height: 5.5ch; */
-    /* width: calc(100% - 4em); */
-    /* margin-top: 100%; */
-    animation-fill-mode: forwards;
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
-    /* box-shadow: 7px 8px #3b3b3bcf; */
-    /* box-shadow: 7px 8px #e14903cf; */
-    /* box-shadow: 7px 8px #242116cf; */
-    overflow: hidden;
-    /* max-width: 50ch; */
-    margin-left: 1em;
-    margin-right: 1em;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     opacity: 0.9;
-    font-style: italic;
-    padding: 0 1em;
-    background-image: url(public/media/hubble.jpg);
-
-    /* background-image: linear-gradient(331deg, #00000000 25%, #000bff), url(public/media/hubble.jpg); */
-    background-size: contain;
-    /* animation: 2s linear expand-term; */
-    /* animation-delay: 3.8s; */
-    animation-fill-mode: forwards;
-    background-position: center;
-    height: 3em;
-    top: 50vh;
-    position: absolute;
     z-index: -2;
     overflow: hidden;
-    /* position: relative; */
+    /* background-image: linear-gradient(331deg, #00000000 25%, #000bff), url(public/media/hubble.jpg); */
+    /* animation: 2s linear expand-term; */
+    /* animation-delay: 3.8s; */
+    /* animation-fill-mode: forwards; */
+    background-color: var(--red);
+    background-image: url(public/media/hubble.jpg);
+    background-position: center;
+    background-size: contain;
+    border-radius: 0.6em;
+    font-style: italic;
+    height: 3em;
+    margin-right: 1em;
+    margin-left: 1em;
+    top: 50vh;
+    position: absolute;
+    padding: 0 1em;
 
 }
 @keyframes expand-term {
     0% {height: 3em; width: 12em; overflow:hidden; filter: contrast(1) invert(0)}
     100% {height: 200vh; overflow:hidden; width:200vw; top: -50vh; filter: contrast(3) invert(1)}
 }
-
-
-
 .term-inner {
     font-family: 'Noto Serif Display';
     color: #da661d;
@@ -50,49 +36,32 @@
     font-weight: 900;
     transform: translateY(-1px);
 }
-
 .term-dreams {
     margin-right: 1em;
-    /* color: #aa7ab8; */
     color: white;
 }
 .term-of {
-    /* color: #94fff6; */
     color: white;
 }
-
 .term-inf {
-    /* color: #fffb00; */
     color: white;
     text-shadow: 0px 0px 7px #fffa00;
     font-style: italic;
 }
-
-.carat {
-    width: 0.5em;
-    height: 1.3em;
-    background-color: var(--white);
-    padding: 0 0.1em;
-    animation: 400ms linear infinite blinky;
-    background-color: #ec7200;
-}
-
 .command {
-    color: white;
-    width: 0;
     animation: 2000ms linear shrinky;
-    animation-delay: 1000ms;
     animation-fill-mode: forwards;
-    font-family: monospace;
-    margin-left: 1.3em;
-    font-style: normal;
+    animation-delay: 1000ms;
+    color: white;
     display: flex;
+    font-family: monospace;
+    font-style: normal;
+    margin-left: 1.3em;
     overflow: hidden;
     text-wrap: nowrap;
+    width: 0;
 }
 @keyframes shrinky {100% {width:14em; display: inherit;}}
-
-
 .carat-trick {
     position: absolute;
     margin-left: 2.0em;
@@ -107,15 +76,19 @@
     0% { margin-left: 3.03em; }
     100% { margin-left: 11.9em;}
 }
-
-
+.carat {
+    width: 0.5em;
+    height: 1.3em;
+    background-color: var(--white);
+    padding: 0 0.1em;
+    animation: 400ms linear infinite blinky;
+    background-color: #ec7200;
+}
 @keyframes blinky {
     0% {opacity: 0;}
     50% {opacity: 1;}
     100% {opacity: 0;}
 }
-
-
 @media screen and (orientation:portrait) {
     .term-outer {
         font-size: 1.2em;

@@ -9,6 +9,7 @@ import (
 	"os"
 )
 
+// readConf reads the bolt configuration file
 func readConf() *config {
 	b, err := os.ReadFile("./bolt.conf.json")
 	if err != nil {

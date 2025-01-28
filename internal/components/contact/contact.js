@@ -21,11 +21,11 @@ async function postContact() {
                 document.getElementById("autosplash").style.opacity = "1";
                 document.getElementById("term-command").innerHTML = "welcome --to=destiny;";
                 document.getElementById("term-outer").style.position = "fixed";
-                splash.style.backgroundImage = "url(public/media/hubble.jpg)";
-                splash.style.backgroundSize = "contain";
-                splash.style.zIndex = "-2";
-                splash.style.filter = "unset";
-                splash.style.opacity = "1";
+                // splash.style.backgroundImage = "url(public/media/hubble.jpg)";
+                // splash.style.backgroundSize = "contain";
+                // splash.style.zIndex = "-2";
+                // splash.style.filter = "unset";
+                // splash.style.opacity = "1";
                 splash.classList.add("splash-zoom");
                 var about = document.getElementById("about-outer");
                 about.innerHTML = "";

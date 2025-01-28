@@ -4,12 +4,6 @@ import (
 	"html/template"
 )
 
-// ckey/ctxkey is used as the key for the HTML context and is how we retrieve
-// token information and pass it around to handlers
-type ckey int
-
-const ctxkey ckey = iota
-
 var (
 	appConf     *config            = readConf()
 	servicePort                    = ":" + appConf.App.Port
@@ -17,6 +11,8 @@ var (
 	templates   *template.Template = template.New("")
 	AppName     string             = appConf.App.Name
 )
+
+type env map[string]string
 
 type contactForm struct {
 	FirstName     string `json:"first_name"`
@@ -26,8 +22,6 @@ type contactForm struct {
 	NewsLetter    string `json:"news_letter"`
 	Questionnaire string `json:"questionnaire"`
 }
-
-type env map[string]string
 
 type config struct {
 	App    app    `json:"app"`
