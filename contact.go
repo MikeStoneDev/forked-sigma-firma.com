@@ -17,7 +17,8 @@ func sendConf(c *contactForm) {
 		To:      c.Email,
 		Subject: "Welcome aboard the ship, captain",
 		Body: "Click the following link to fill out our questionnaire:" +
-			"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
+			"https://forms.gle/tuC2nuh5EBsjNQCc8" +
+			"<br /><br /><div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
 		ImagePath: "",
 		MimeType:  "",
 	}
