@@ -66,10 +66,10 @@
     font-size: 1em;
 }
 .footer-dev {
-    background: #ffcc8e;
+    background: var(--white);
     padding: 0.1em 0.4em;
     border-radius: 0.2em;
-    color: var(--white);
+    color: var(--red);
 }
 .footer-span {
     display: flex;
