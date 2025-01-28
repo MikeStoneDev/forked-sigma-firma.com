@@ -33,7 +33,7 @@ li {
     font-weight: bold;
 }
 .about-chart {
-    background-image: url(public/media/flow.png);
+    background-image: url(public/media/chart.svg);
     background-position: center;
     height: 35vw;
     width: 100%;
