@@ -12,6 +12,7 @@
 li {
     margin: 0 2em 0.5em 0;
     font-size: 1.25em;
+    text-align: left;
 }
 .about-inner {
     /* margin-top: 5em; */
@@ -38,7 +39,7 @@ li {
     /* z-index: 5; */
     font-weight: bold;
     /* position: relative; */
-    transform: translateX(0.15em);
+    /* transform: translateX(0.15em); */
 }
 .about-chart {
     background-image: url(public/media/flow.png);
