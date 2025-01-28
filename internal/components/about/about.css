@@ -1,13 +1,10 @@
 .about-outer {
-    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     background: linear-gradient(358deg, #ffffff 81%, transparent 100%);
-    /* padding: 2em; */
     margin-top: 100vh;
-    /* max-width: 80ch; */
 }
 li {
     margin: 0 2em 0.5em 0;
@@ -15,10 +12,8 @@ li {
     text-align: left;
 }
 .about-inner {
-    /* margin-top: 5em; */
     text-align: justify;
     z-index: 5;
-    /* position: relative; */
 }
 .about-inner > h3 {
     text-align: center;
@@ -34,12 +29,8 @@ li {
 .about-logo {
     color: black;
     font-size: 3em;
-    /* text-align: center; */
     margin-top: 3em;
-    /* z-index: 5; */
     font-weight: bold;
-    /* position: relative; */
-    /* transform: translateX(0.15em); */
 }
 .about-chart {
     background-image: url(public/media/flow.png);
@@ -48,44 +39,15 @@ li {
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
-    /* max-width: 86ch; */
-    /* max-height: 50em; */
     margin: 3em 0 2em 0;
 
 }
-/* .about-bolt-logo { */
-/* line-height: 1px; */
-/* font-size: 40em; */
-/* z-index: 1; */
-/* position: absolute; */
-/* text-align: center; */
-/* margin-left: 21vw; */
-/* margin-top: -9vh; */
-/* font-weight: bold; */
-/* height: 3em; */
-/* max-width: 100vw; */
-/* color: #fcff87; */
-/* text-shadow: 20px 19px #f4904f; */
-/* } */
-
-/* @media screen and (orientation:landscape) { */
-/*     max-width: 80ch; */
-/* } */
 @media screen and (orientation:portrait) {
     .about-inner {
         margin-right: 2em;
         margin-left: 2em;
         width: calc(100vw - 4em);
     }
-    /* .about-bolt-logo { */
-    /*     margin-left: 0; */
-    /* } */
-    /* .about-outer { */
-    /* background: linear-gradient(358deg, #ffffff 90%, transparent); */
-    /* background: linear-gradient(358deg, #ffffff 75%, transparent 97%); */
-    /* width: 100vw; */
-    /* padding: unset; */
-    /* } */
     li {
         font-size: 1em;
     }
@@ -96,17 +58,3 @@ li {
         height: 63vw;
     }
 }
-/* .about-bolt { */
-/*     font-size: 47em; */
-/*     text-align: center; */
-/*     color: #fff400; */
-/*     z-index: -3; */
-/*     height: 0; */
-/*     animation: 350ms linear strike; */
-/*     animation-fill-mode: forwards; */
-/*     position: absolute; */
-/*     width: 100%; */
-/*     top: -1em; */
-/*     left: 1em; */
-/*     font-weight: 900; */
-/* } */

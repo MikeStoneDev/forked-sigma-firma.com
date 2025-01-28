@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fira+Mono:wght@400;500;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
 :root {
@@ -19,14 +17,6 @@ body, html {
   font-family: "Outfit", serif;
   display: flex;
   justify-content: center;
-  /* font-size: 1em; */
-  /* overflow-x: hidden; */
-  /* max-width: 100%; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: nowrap; */
-  /* align-items: center; */
-  /* position: relative; */
 }
 a {
   text-decoration: none;
@@ -40,12 +30,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  /* flex-wrap: nowrap; */
-  /* margin: 1em 0em 0 0em; */
   align-items: center;
-  /* overflow-x: hidden; */
-  /* max-width: 100%; */
-  /* position: relative; */
 }
 @media screen and (orientation:portrait) {
   .wrapper {
