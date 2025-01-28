@@ -1,11 +1,8 @@
 .autosplash-outer {
-  /* height: 87vh; */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  /* min-width: 45vw; */
-  /* width:100%; */
   position: fixed;
   z-index: -10;
 }
@@ -14,52 +11,27 @@
   background-size: cover;
   background-repeat: repeat;
   height: 100vh;
-  /* z-index: -1; */
   position: fixed;
   width: -webkit-fill-available;
-  /* top:0; */
-  /* left:0; */
   animation: 1s linear bgzoom;
   animation-fill-mode: forwards;
-  /* color: var(--darkgrey); */
   opacity: 0.2;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: nowrap; */
-  /* align-content: center; */
-  /* align-items: center; */
 }
 .splash-logo {
   font-family: "Noto Serif Display", serif;
   font-optical-sizing: auto;
   font-style: italic;
   font-variation-settings: "wdth" 100;
-  /* text-align: center; */
-  /* font-size: 6em; */
   font-weight: 900;
   padding-top: 20vh;
-  /* min-width: 6ch; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  /* justify-content: center; */
   font-size: 3.5em;
-  /* position: absolute; */
   animation: 1s linear boltin;
   animation-fill-mode: forwards;
 }
-/* .logo-sub { */
-/*   color: #03685f; */
-/*   font-size: 1.8em; */
-/*   font-weight: bold; */
-/*   width: 100%; */
-/*   padding: 0.5em 0.5em 0.5em 4em;; */
-/*   margin-top: 1.2em; */
-/*   border-radius: 0.4em; */
-/*   backdrop-filter: sepia(1) blur(2.3px); */
-/*   background: linear-gradient(45deg, #6affd996, #97ff0087, #ffff008f, #ff561f85, transparent); */
-/* } */
 .autosplash-firma {
   transform: translateX(-20px);
   color: var(--blue);
@@ -70,7 +42,6 @@
   font-size: 3em;
   color: var(--red);
   transform: translateX(20px) !important;
-  /* z-index: -1; */
 }
 .splash-zoom {
   opacity: 1;
