@@ -4,7 +4,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     width: calc(100% - 2em);
-    padding: 0 1em 5em 1em;
+    padding: 0 1em 7em 1em;
     background: linear-gradient(0deg, var(--lightgrey) 59%, transparent 100%);
 }
 .contact-form {
