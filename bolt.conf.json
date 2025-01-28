@@ -1,1 +1,23 @@
-{"app":{"name":"sigma ⚡︎ firma","command":"","domain_name":"sigma-firma.com","version":"0.01","env":{},"port":"10529","alertsOn":true,"tls_enabled":true,"repo":"https://github.com/sigma-firma/sigma-firma.com"},"gcloud":{"command":"gcloud","zone":"us-central1-a","project":"mysterygift","user":"john","livedir":"/home/john/live/","instance":"main","proxy_home":"/home/john/bp/","proxyConf":""}}
+{
+  "app": {
+    "name": "sigma ⚡︎ firma",
+    "command": "",
+    "domain_name": "sigma-firma.com",
+    "version": "0.01",
+    "env": {},
+    "port": "10529",
+    "alertsOn": true,
+    "tls_enabled": true,
+    "repo": "https://github.com/sigma-firma/sigma-firma.com"
+  },
+  "gcloud": {
+    "command": "gcloud",
+    "zone": "us-central1-a",
+    "project": "mysterygift",
+    "user": "john",
+    "livedir": "/home/john/live/",
+    "instance": "main",
+    "proxy_home": "/home/john/bp/",
+    "proxyConf": ""
+  }
+}

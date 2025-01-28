@@ -14,15 +14,6 @@ var (
 
 type env map[string]string
 
-type contactForm struct {
-	FirstName     string `json:"first_name"`
-	LastName      string `json:"last_name"`
-	Email         string `json:"email"`
-	Phone         string `json:"phone"`
-	NewsLetter    string `json:"news_letter"`
-	Questionnaire string `json:"questionnaire"`
-}
-
 type config struct {
 	App    app    `json:"app"`
 	GCloud gcloud `json:"gcloud"`

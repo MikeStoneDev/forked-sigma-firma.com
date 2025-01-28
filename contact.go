@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"encoding/json"
+	"errors"
 	"log"
 	"net/http"
 	"os"
@@ -14,6 +16,30 @@ import (
 	"google.golang.org/api/sheets/v4"
 )
 
+type contactForm struct {
+	FirstName     string `json:"first_name"`
+	LastName      string `json:"last_name"`
+	Email         string `json:"email"`
+	Phone         string `json:"phone"`
+	NewsLetter    string `json:"news_letter"`
+	Questionnaire string `json:"questionnaire"`
+}
+
+// marshalCredentials is used convert a request body into a credentials{}
+// struct
+func marshalContact(r *http.Request) (*contactForm, error) {
+	t := &contactForm{}
+	decoder := json.NewDecoder(r.Body)
+	defer r.Body.Close()
+	err := decoder.Decode(t)
+	if err != nil {
+		return t, err
+	}
+	if t.FirstName == "" || t.LastName == "" || t.Phone == "" || t.Email == "" {
+		return t, errors.New("Invalid Input")
+	}
+	return t, nil
+}
 func contact(w http.ResponseWriter, r *http.Request) {
 	cf, err := marshalContact(r)
 	if err != nil {

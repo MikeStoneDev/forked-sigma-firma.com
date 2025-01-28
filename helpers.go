@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"math/rand"
 	"net/http"
@@ -66,20 +65,4 @@ func genPostID(length int) (ID string) {
 		ID += symbols[s : s+1]
 	}
 	return
-}
-
-// marshalCredentials is used convert a request body into a credentials{}
-// struct
-func marshalContact(r *http.Request) (*contactForm, error) {
-	t := &contactForm{}
-	decoder := json.NewDecoder(r.Body)
-	defer r.Body.Close()
-	err := decoder.Decode(t)
-	if err != nil {
-		return t, err
-	}
-	if t.FirstName == "" || t.LastName == "" || t.Phone == "" || t.Email == "" {
-		return t, errors.New("Invalid Input")
-	}
-	return t, nil
 }
