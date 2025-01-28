@@ -27,6 +27,8 @@ async function postContact() {
                 setTimeout(function() {location.reload()}, 5000);
             } else {
                 form.style.filter = "unset";
+                cbutt.innerHTML = res.error;
+                cbutt.classList.add("invalid-butt");
             }
         } else {
             cbutt.classList.add("invalid-butt");
