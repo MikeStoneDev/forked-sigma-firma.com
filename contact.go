@@ -16,9 +16,9 @@ func sendConf(c *contactForm) {
 	msg := &inboxer.Msg{
 		To:      c.Email,
 		Subject: "Welcome aboard the ship, captain",
-		Body: "Click the following link to fill out our questionnaire:" +
-			"https://forms.gle/tuC2nuh5EBsjNQCc8" +
-			"<br /><br /><div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
+		Body: "<div><a href=\"https://forms.gle/tuC2nuh5EBsjNQCc8\">" +
+			"Click here to fill out our questionnaire.</a></div>" +
+			"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
 		ImagePath: "",
 		MimeType:  "",
 	}
