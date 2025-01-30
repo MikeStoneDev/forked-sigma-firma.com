@@ -35,6 +35,7 @@ func marshalContact(r *http.Request) (*contactForm, error) {
 	if err != nil {
 		return t, err
 	}
+	log.Println(t.Phone)
 	if t.FirstName == "" || t.LastName == "" || t.Phone == "" || t.Email == "" {
 		return t, errors.New("Invalid Input")
 	}
@@ -43,7 +44,9 @@ func marshalContact(r *http.Request) (*contactForm, error) {
 func contact(w http.ResponseWriter, r *http.Request) {
 	cf, err := marshalContact(r)
 	if err != nil {
+		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
 		log.Println(err)
+		return
 	}
 
 	if cf.Email == "" || cf.FirstName == cf.LastName {

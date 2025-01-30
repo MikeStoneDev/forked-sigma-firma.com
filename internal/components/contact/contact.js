@@ -65,21 +65,21 @@ function validateFormData(formData) {
             case 'first_name':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
-                    break;
+                    return;
                 }
-                break;
+                    break;
             case 'last_name':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
-                    break;
+                    return;
                 }
-                break;
+                    break;
             case 'phone':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
-                    break;
+                    return;
                 }
-                break;
+                    break;
             case 'email':
                 var inp = document.getElementById("contact_" +key);
                 if (validateEmail(inp.value)) {
@@ -95,7 +95,6 @@ function validateFormData(formData) {
     return isValid;
 }
 function inputinvalid(key, value) {
-    console.log(key, value, "dopkdpok")
     var inp = document.getElementById("contact_" +key);
     if (inp.value.trim() === '') {
         cbutt.innerHTML = "every field is required";
