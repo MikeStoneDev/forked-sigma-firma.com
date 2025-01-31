@@ -13,6 +13,7 @@
     background-color: var(--red);
     color: var(--white);
     animation: 0.2s linear navbar-load;
+    align-items: center;
 }
 .logo-nav {
     padding: 1em;
