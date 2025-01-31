@@ -1,6 +1,6 @@
 var cbutt = document.getElementById("contact-butt");
 async function postContact() {
-    fbq('track', 'CompleteRegistration');
+    fbq('track', 'Contact');
     if (!sent) {
         var form = document.getElementById("formData");
         var formData = new FormData(form);
