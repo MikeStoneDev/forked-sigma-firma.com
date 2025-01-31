@@ -29,9 +29,8 @@
   flex-wrap: nowrap;
   align-items: center;
   font-size: 3.5em;
-  animation: 1s linear boltin;
-  animation-fill-mode: forwards;
   z-index: 10;
+  animation: hoverin 2000ms linear infinite;
 }
 .autosplash-firma {
   transform: translateX(-20px);

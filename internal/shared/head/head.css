@@ -31,7 +31,21 @@ a {
   flex-direction: column;
   width: 100vw;
   align-items: center;
+  transition: all 1s;
 }
+.wrapper-blur {
+  filter: blur(3px) invert(0.1);
+  transition: all 1s;
+}
+/* .space { */
+/*   background: linear-gradient(179deg, var(--lightgrey) 59%, transparent 100%), url(public/media/hubble.jpg); */
+/*   position: absolute; */
+/*   bottom:0; */
+/*   left:0; */
+/*   width: 100vw; */
+/*   height: 100vh; */
+/*   background-size: contain; */
+/* } */
 @media screen and (orientation:portrait) {
   .wrapper {
     max-width: 100%;

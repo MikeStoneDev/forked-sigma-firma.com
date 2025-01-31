@@ -1,15 +1,35 @@
 .footer-outer {
-    background-color: var(--red);
+    /* background: url(public/media/hubble.jpg); */
+    /* background-size: contain; */
     width: 100%;
-}
+    /* position: relative; */
+    /* height: 100vh; */
+    display: flex;
+    background-color: var(--red);
+flex-direction: column;}
 .footer-inner {
+    /* height: 100vh; */
     height: 30vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    /* animation: hoverin 2000ms linear infinite; */
 }
+/* .moon { */
+/* height: 8vh; */
+/*     width: 8vh; */
+/*     background: #fff9c9; */
+/*     border-radius: 3em; */
+/*     position: absolute; */
+/*     top: 42vh; */
+/*     left: 48vw; */
+/*     animation: 3500ms linear infinite orbit; */
+/*     background: radial-gradient(circle at 100%, #8bff03bd 25%, #16ffd8cc 50%, #ff01d8d6 75%, #ff0505de 100%); */
+/*     font-size: 1.6em; */
+/* filter: blur(8px); */
+/* } */
 .gift {
     margin-top: 4em;
     font-size: 0.5em;
@@ -76,4 +96,33 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+}
+@keyframes orbit {
+    25% {
+        transform: translate(15vw, -13vh) scale(0.8);
+    }
+
+    50% {
+        transform: scale(0.5);
+        z-index: -1;
+    }
+    74% {
+        z-index: -1;
+    }
+    75% {
+        transform: translate(-15vw, 13vh);
+        z-index: 1;
+    }
+}
+@keyframes hoverin {
+    0% {
+        transform: translateY(0em);
+    }
+
+    50% {
+        transform: translateY(0.5em);
+    }
+    100% {
+        transform: translateY(0em);
+    }
 }

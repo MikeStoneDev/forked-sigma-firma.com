@@ -3,13 +3,14 @@
 	{{template "head.html" . }} 
 	<body>
 		{{template "term.html" . }}
-		<div class="wrapper">
-			{{template "autonav.html" . }}
+		{{template "autonav.html" . }}
+		<div class="wrapper" id="wrapper">
 			{{template "autosplash.html" . }}
 			{{template "about.html" . }}
 			<!-- {{template "demos.html" . }} -->
 			{{template "contact.html" . }}
 			{{template "footer.html" . }}
 		</div>
+		<div class="space"></div>
 	</body>
 </html>
