@@ -123,17 +123,21 @@ func sendConf(c *contactForm) error {
 
 func bobbyEmail(msg *inboxer.Msg) error {
 	msg.From = "me"
-	srv := gmailAPI.ConnectToService(context.Background(), os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
-	return msg.Send(srv)
+	// srv := gmailAPI.ConnectToService(context.Background(), os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
+	return msg.Send(connectToGoogleAPI())
+}
+
+func connectToGoogleAPI() *gmail.Service {
+	return gmailAPI.ConnectToService(
+		context.Background(),
+		os.Getenv("HOME")+"/credentials",
+		gmail.MailGoogleComScope,
+	)
 }
 
 func autoRefreshGoogleToken() {
 	for {
-		call := gmailAPI.ConnectToService(
-			context.Background(),
-			os.Getenv("HOME")+"/credentials",
-			gmail.MailGoogleComScope,
-		).Users.GetProfile("me")
+		call := connectToGoogleAPI().Users.GetProfile("me")
 
 		_, err := call.Do()
 		if err != nil {
@@ -149,7 +153,7 @@ func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
 	sheet := &ohsheet.Access{
 		Token:       os.Getenv("HOME") + "/credentials/sheets-go-quickstart.json",
 		Credentials: os.Getenv("HOME") + "/credentials/credentials.json",
-		Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets", gmail.MailGoogleComScope},
+		Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets"},
 	}
 	srv := sheet.Connect()
 
