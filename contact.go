@@ -16,6 +16,10 @@ import (
 	"google.golang.org/api/sheets/v4"
 )
 
+var confirmationBody string = "<div><a href=\"https://forms.gle/tuC2nuh5EBsjNQCc8\">" +
+	"Click here to fill out our questionnaire.</a></div>" +
+	"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>"
+
 type contactForm struct {
 	FirstName     string `json:"first_name"`
 	LastName      string `json:"last_name"`
@@ -23,6 +27,42 @@ type contactForm struct {
 	Phone         string `json:"phone"`
 	NewsLetter    string `json:"news_letter"`
 	Questionnaire string `json:"questionnaire"`
+}
+
+func contact(w http.ResponseWriter, r *http.Request) {
+	cf, err := marshalContact(r)
+	if err != nil {
+		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
+		log.Println(err)
+		return
+	}
+
+	err = sendAll(cf)
+	if err != nil {
+		log.Println(err)
+		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
+	}
+
+	ajaxResponse(w, map[string]string{"success": "true"})
+}
+
+func sendAll(cf *contactForm) error {
+	err := sendAlertEmail(cf)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	err = sendConf(cf)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	err = sendToSheet(cf)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	return nil
 }
 
 // marshalCredentials is used convert a request body into a credentials{}
@@ -35,43 +75,15 @@ func marshalContact(r *http.Request) (*contactForm, error) {
 	if err != nil {
 		return t, err
 	}
-	log.Println(t.Phone)
 	if t.FirstName == "" || t.LastName == "" || t.Phone == "" || t.Email == "" {
 		return t, errors.New("Invalid Input")
 	}
 	return t, nil
 }
-func contact(w http.ResponseWriter, r *http.Request) {
-	cf, err := marshalContact(r)
-	if err != nil {
-		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
-		log.Println(err)
-		return
-	}
-
-	if cf.Email == "" || cf.FirstName == cf.LastName {
-		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
-		return
-	}
-
-	msg := &inboxer.Msg{
-		To:        "leadership@sigma-firma.com",
-		Subject:   "New Contact",
-		Body:      formatContactEmail(cf),
-		ImagePath: "",
-		MimeType:  "",
-	}
-	err = bobbyEmail(msg)
-	if err != nil {
-		log.Println(err)
-		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
-		return
-	}
-	sendConf(cf)
-
+func sendToSheet(cf *contactForm) error {
 	loc, err := time.LoadLocation("America/New_York")
 	if err != nil {
-		log.Println(err)
+		return err
 	}
 	_, err = addRow([]interface{}{
 		cf.LastName,
@@ -84,41 +96,60 @@ func contact(w http.ResponseWriter, r *http.Request) {
 		false,
 	})
 	if err != nil {
-		log.Println(err)
-		ajaxResponse(w, map[string]string{"success": "false", "error": "invalid form data"})
-		return
+		return err
 	}
-	ajaxResponse(w, map[string]string{"success": "true"})
+	return nil
 }
-func sendConf(c *contactForm) {
+func sendAlertEmail(cf *contactForm) error {
 	msg := &inboxer.Msg{
-		To:      c.Email,
-		Subject: "Welcome aboard the ship, captain",
-		Body: "<div><a href=\"https://forms.gle/tuC2nuh5EBsjNQCc8\">" +
-			"Click here to fill out our questionnaire.</a></div>" +
-			"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>",
+		To:        "leadership@sigma-firma.com",
+		Subject:   "New Contact",
+		Body:      formatContactEmail(cf),
 		ImagePath: "",
 		MimeType:  "",
 	}
-	err := bobbyEmail(msg)
-	if err != nil {
-		log.Println(err)
+	return bobbyEmail(msg)
+}
+func sendConf(c *contactForm) error {
+	msg := &inboxer.Msg{
+		To:        c.Email,
+		Subject:   "Welcome aboard the ship, captain",
+		Body:      confirmationBody,
+		ImagePath: "",
+		MimeType:  "",
 	}
+	return bobbyEmail(msg)
 }
 
 func bobbyEmail(msg *inboxer.Msg) error {
 	msg.From = "me"
-	ctx := context.Background()
-	srv := gmailAPI.ConnectToService(ctx, os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
+	srv := gmailAPI.ConnectToService(context.Background(), os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
 	return msg.Send(srv)
 }
 
+func autoRefreshGoogleToken() {
+	for {
+		call := gmailAPI.ConnectToService(
+			context.Background(),
+			os.Getenv("HOME")+"/credentials",
+			gmail.MailGoogleComScope,
+		).Users.GetProfile("me")
+
+		_, err := call.Do()
+		if err != nil {
+			log.Println(err)
+		}
+
+		// refresh the token once every twelve hours
+		time.Sleep(12 * time.Hour)
+	}
+}
 func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
 	// Connect to the API
 	sheet := &ohsheet.Access{
 		Token:       os.Getenv("HOME") + "/credentials/sheets-go-quickstart.json",
 		Credentials: os.Getenv("HOME") + "/credentials/credentials.json",
-		Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets"},
+		Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets", gmail.MailGoogleComScope},
 	}
 	srv := sheet.Connect()
 

@@ -1,6 +1,5 @@
 var cbutt = document.getElementById("contact-butt");
 async function postContact() {
-    fbq('track', 'Contact');
     if (!sent) {
         var form = document.getElementById("formData");
         var formData = new FormData(form);
@@ -68,19 +67,19 @@ function validateFormData(formData) {
                     isValid = false;
                     return;
                 }
-                break;
+                    break;
             case 'last_name':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
                     return;
                 }
-                break;
+                    break;
             case 'phone':
                 if (!inputinvalid(key, value)) {
                     isValid = false;
                     return;
                 }
-                break;
+                    break;
             case 'email':
                 var inp = document.getElementById("contact_" +key);
                 if (validateEmail(inp.value)) {

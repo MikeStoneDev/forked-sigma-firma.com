@@ -68,6 +68,13 @@
         align-items: center;
     }
 }
+.autonav-beaker-about {
+    background: url(public/media/flask.svg);
+    height: 4em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 3em;
+}
 @media screen and (orientation:portrait) {
     .navbar-outer {
         padding-left: 1em;
