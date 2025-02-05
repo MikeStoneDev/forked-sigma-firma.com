@@ -143,6 +143,17 @@ func autoRefreshGoogleToken() {
 		if err != nil {
 			log.Println(err)
 		}
+		sheet := &ohsheet.Access{
+			Token:       os.Getenv("HOME") + "/credentials/sheets-go-quickstart.json",
+			Credentials: os.Getenv("HOME") + "/credentials/credentials.json",
+			Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets"},
+		}
+		srv := sheet.Connect()
+		spreadsheetId := "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA"
+		_, err = srv.Spreadsheets.Get(spreadsheetId).Do()
+		if err != nil {
+			log.Println(err)
+		}
 
 		// refresh the token once every twelve hours
 		time.Sleep(12 * time.Hour)
