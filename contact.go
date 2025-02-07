@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"errors"
 	"log"
@@ -9,13 +8,18 @@ import (
 	"os"
 	"time"
 
-	"github.com/sigma-firma/gmailAPI"
-	ohsheet "github.com/sigma-firma/googlesheetsapi"
-	"github.com/sigma-firma/inboxer"
 	"google.golang.org/api/gmail/v1"
 	"google.golang.org/api/sheets/v4"
+
+	"github.com/sigma-firma/gsheet"
 )
 
+var access *gsheet.Access = gsheet.NewAccess(
+	os.Getenv("HOME")+"/credentials/credentials.json",
+	os.Getenv("HOME")+"/credentials/quickstart.json",
+	[]string{gmail.GmailComposeScope, sheets.SpreadsheetsScope},
+)
+var gm *gsheet.Gmailer = access.Gmail()
 var confirmationBody string = "<div><a href=\"https://forms.gle/tuC2nuh5EBsjNQCc8\">" +
 	"Click here to fill out our questionnaire.</a></div>" +
 	"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>"
@@ -47,12 +51,12 @@ func contact(w http.ResponseWriter, r *http.Request) {
 }
 
 func sendAll(cf *contactForm) error {
-	err := sendAlertEmail(cf)
+	_, err := sendAlertEmail(cf)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
-	err = sendConf(cf)
+	_, err = sendConf(cf)
 	if err != nil {
 		log.Println(err)
 		return err
@@ -80,6 +84,7 @@ func marshalContact(r *http.Request) (*contactForm, error) {
 	}
 	return t, nil
 }
+
 func sendToSheet(cf *contactForm) error {
 	loc, err := time.LoadLocation("America/New_York")
 	if err != nil {
@@ -100,8 +105,8 @@ func sendToSheet(cf *contactForm) error {
 	}
 	return nil
 }
-func sendAlertEmail(cf *contactForm) error {
-	msg := &inboxer.Msg{
+func sendAlertEmail(cf *contactForm) (*gmail.Message, error) {
+	msg := &gsheet.Msg{
 		To:        "leadership@sigma-firma.com",
 		Subject:   "New Contact",
 		Body:      formatContactEmail(cf),
@@ -110,8 +115,8 @@ func sendAlertEmail(cf *contactForm) error {
 	}
 	return bobbyEmail(msg)
 }
-func sendConf(c *contactForm) error {
-	msg := &inboxer.Msg{
+func sendConf(c *contactForm) (*gmail.Message, error) {
+	msg := &gsheet.Msg{
 		To:        c.Email,
 		Subject:   "Welcome aboard the ship, captain",
 		Body:      confirmationBody,
@@ -121,58 +126,40 @@ func sendConf(c *contactForm) error {
 	return bobbyEmail(msg)
 }
 
-func bobbyEmail(msg *inboxer.Msg) error {
+func bobbyEmail(msg *gsheet.Msg) (*gmail.Message, error) {
 	msg.From = "me"
-	// srv := gmailAPI.ConnectToService(context.Background(), os.Getenv("HOME")+"/credentials", gmail.MailGoogleComScope)
-	return msg.Send(connectToGoogleAPI())
+	msg.Form()
+	return gm.Service.Users.Messages.Send(msg.From, msg.Formed).Do()
 }
-
-func connectToGoogleAPI() *gmail.Service {
-	return gmailAPI.ConnectToService(
-		context.Background(),
-		os.Getenv("HOME")+"/credentials",
-		gmail.MailGoogleComScope,
-	)
-}
-
 func autoRefreshGoogleToken() {
+	access.ReadCredentials()
 	for {
-		call := connectToGoogleAPI().Users.GetProfile("me")
 
-		_, err := call.Do()
-		if err != nil {
-			log.Println(err)
-		}
-		sheet := &ohsheet.Access{
-			Token:       os.Getenv("HOME") + "/credentials/sheets-go-quickstart.json",
-			Credentials: os.Getenv("HOME") + "/credentials/credentials.json",
-			Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets"},
-		}
-		srv := sheet.Connect()
-		spreadsheetId := "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA"
-		_, err = srv.Spreadsheets.Get(spreadsheetId).Do()
-		if err != nil {
-			log.Println(err)
-		}
+		// fmt.Println(access.Users)
+
+		// spreadsheetId := "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA"
+		// sh := access.ConnectToService(cg.Service[any]{T: &gmail.Service{}}).(*sheets.Service)
+		// _, err = sh.Spreadsheets.Get(spreadsheetId).Do()
+		// if err != nil {
+		// 	log.Println(err)
+		// }
 
 		// refresh the token once every twelve hours
 		time.Sleep(12 * time.Hour)
 	}
 }
-func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
-	// Connect to the API
-	sheet := &ohsheet.Access{
-		Token:       os.Getenv("HOME") + "/credentials/sheets-go-quickstart.json",
-		Credentials: os.Getenv("HOME") + "/credentials/credentials.json",
-		Scopes:      []string{"https://www.googleapis.com/auth/spreadsheets"},
-	}
-	srv := sheet.Connect()
 
-	spreadsheetId := "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA"
+func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
+	sh := access.Sheets()
+	var req *gsheet.Spread = &gsheet.Spread{
+		ID:               "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA",
+		WriteRange:       "A2",
+		Vals:             row,
+		ValueInputOption: "RAW",
+	}
 
 	// Write to the sheet
-	writeRange := "A2"
-	return sheet.Write(srv, spreadsheetId, writeRange, row)
+	return sh.Write(req)
 }
 func formatContactEmail(cf *contactForm) string {
 	return "<div style=\"white-space: pre-wrap; font-size:2em;\">" +
