@@ -16,7 +16,6 @@ func main() {
 		f := setupLogging()
 		defer f.Close()
 	}
-	go autoRefreshGoogleToken()
 
 	ctx, srv := bolt()
 

@@ -57,6 +57,14 @@ github.com/sigma-firma/gsheet v0.0.0-20250206225347-226122c90a9a h1:Qmr1mrDNAQEq
 github.com/sigma-firma/gsheet v0.0.0-20250206225347-226122c90a9a/go.mod h1:j1kRiPRPTuVaqtfuLcHAelTLOybIFsuMnIPWubOsVBQ=
 github.com/sigma-firma/gsheet v0.0.0-20250206225535-13cb86c4d13c h1:/279tNd6BMUqkwaYwXPOb5xkTVJfPqSk6b/MtowBiVw=
 github.com/sigma-firma/gsheet v0.0.0-20250206225535-13cb86c4d13c/go.mod h1:j1kRiPRPTuVaqtfuLcHAelTLOybIFsuMnIPWubOsVBQ=
+github.com/sigma-firma/gsheet v0.0.0-20250207162645-7480e4b9b2c5 h1:I4was1H2mKLlGMRQAKVkIXn8O6625RpY05fKCSewKVw=
+github.com/sigma-firma/gsheet v0.0.0-20250207162645-7480e4b9b2c5/go.mod h1:j1kRiPRPTuVaqtfuLcHAelTLOybIFsuMnIPWubOsVBQ=
+github.com/sigma-firma/gsheet v0.0.0-20250207163228-aeb1a59ac1b7 h1:pStNzSFdCmLSfg9bNuRgJdz0aAZ/LP0JZSyhRzpVwcs=
+github.com/sigma-firma/gsheet v0.0.0-20250207163228-aeb1a59ac1b7/go.mod h1:j1kRiPRPTuVaqtfuLcHAelTLOybIFsuMnIPWubOsVBQ=
+github.com/sigma-firma/gsheet v0.0.0-20250207163927-0d427383c0c4 h1:mB6BrPWLjdBhF4DGZ54jabHwp9nfjxEmy1AzUA2o/fQ=
+github.com/sigma-firma/gsheet v0.0.0-20250207163927-0d427383c0c4/go.mod h1:j1kRiPRPTuVaqtfuLcHAelTLOybIFsuMnIPWubOsVBQ=
+github.com/sigma-firma/gsheet v0.0.0-20250208041123-181dfe66a7fd h1:tLn2AwqyHhfwFxWrTQwQf4XIKSD5qMXnkZzJJEdJqpM=
+github.com/sigma-firma/gsheet v0.0.0-20250208041123-181dfe66a7fd/go.mod h1:j1kRiPRPTuVaqtfuLcHAelTLOybIFsuMnIPWubOsVBQ=
 github.com/sigma-firma/inboxer v0.0.0-20250125103059-8b09963f8a50 h1:aIRu+x5Y+/cRYAi7yc/c+MhJyAp7oAa3kQvSW4xhSp4=
 github.com/sigma-firma/inboxer v0.0.0-20250125103059-8b09963f8a50/go.mod h1:2GsHqBoYJr9Waa3cyebQIvDAKffwixi58l2ypjsnndc=
 github.com/sigma-firma/inboxer v0.0.0-20250206130226-1538bf37c182 h1:YOjwB1w8LUFk0njpT4olPYXjLYZUlof+8xG4Ba4rDaY=

@@ -5,7 +5,6 @@ import (
 	"errors"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
 	"google.golang.org/api/gmail/v1"
@@ -14,12 +13,14 @@ import (
 	"github.com/sigma-firma/gsheet"
 )
 
-var access *gsheet.Access = gsheet.NewAccess(
-	os.Getenv("HOME")+"/credentials/credentials.json",
-	os.Getenv("HOME")+"/credentials/quickstart.json",
-	[]string{gmail.GmailComposeScope, sheets.SpreadsheetsScope},
-)
-var gm *gsheet.Gmailer = access.Gmail()
+// var access *gsheet.Access = gsheet.NewAccess(
+//
+//	os.Getenv("HOME")+"/credentials/credentials.json",
+//	os.Getenv("HOME")+"/credentials/token.json",
+//	[]string{gmail.GmailComposeScope, sheets.SpreadsheetsScope},
+//
+// )
+// var gm *gsheet.Gmailer = access.Gmail()
 var confirmationBody string = "<div><a href=\"https://forms.gle/tuC2nuh5EBsjNQCc8\">" +
 	"Click here to fill out our questionnaire.</a></div>" +
 	"<div style=\"font-size: 3em; font-weight: bold;\"><div style=\"color: red; display: inline;\">Σ</div>firma</div>"
@@ -50,6 +51,21 @@ func contact(w http.ResponseWriter, r *http.Request) {
 	ajaxResponse(w, map[string]string{"success": "true"})
 }
 
+// marshalCredentials is used convert a request body into a credentials{}
+// struct
+func marshalContact(r *http.Request) (*contactForm, error) {
+	t := &contactForm{}
+	decoder := json.NewDecoder(r.Body)
+	defer r.Body.Close()
+	err := decoder.Decode(t)
+	if err != nil {
+		return t, err
+	}
+	if t.FirstName == "" || t.LastName == "" || t.Phone == "" || t.Email == "" {
+		return t, errors.New("Invalid Input")
+	}
+	return t, nil
+}
 func sendAll(cf *contactForm) error {
 	_, err := sendAlertEmail(cf)
 	if err != nil {
@@ -68,23 +84,6 @@ func sendAll(cf *contactForm) error {
 	}
 	return nil
 }
-
-// marshalCredentials is used convert a request body into a credentials{}
-// struct
-func marshalContact(r *http.Request) (*contactForm, error) {
-	t := &contactForm{}
-	decoder := json.NewDecoder(r.Body)
-	defer r.Body.Close()
-	err := decoder.Decode(t)
-	if err != nil {
-		return t, err
-	}
-	if t.FirstName == "" || t.LastName == "" || t.Phone == "" || t.Email == "" {
-		return t, errors.New("Invalid Input")
-	}
-	return t, nil
-}
-
 func sendToSheet(cf *contactForm) error {
 	loc, err := time.LoadLocation("America/New_York")
 	if err != nil {
@@ -128,43 +127,28 @@ func sendConf(c *contactForm) (*gmail.Message, error) {
 
 func bobbyEmail(msg *gsheet.Msg) (*gmail.Message, error) {
 	msg.From = "me"
-	msg.Form()
-	return gm.Service.Users.Messages.Send(msg.From, msg.Formed).Do()
-}
-func autoRefreshGoogleToken() {
-	access.ReadCredentials()
-	for {
-
-		// fmt.Println(access.Users)
-
-		// spreadsheetId := "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA"
-		// sh := access.ConnectToService(cg.Service[any]{T: &gmail.Service{}}).(*sheets.Service)
-		// _, err = sh.Spreadsheets.Get(spreadsheetId).Do()
-		// if err != nil {
-		// 	log.Println(err)
-		// }
-
-		// refresh the token once every twelve hours
-		time.Sleep(12 * time.Hour)
-	}
+	return &gmail.Message{}, nil
+	// gm.Service.Users.Messages.Send(msg.From, msg.Form()).Do()
 }
 
-func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
-	sh := access.Sheets()
-	var req *gsheet.Spread = &gsheet.Spread{
-		ID:               "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA",
-		WriteRange:       "A2",
-		Vals:             row,
-		ValueInputOption: "RAW",
-	}
-
-	// Write to the sheet
-	return sh.Write(req)
-}
 func formatContactEmail(cf *contactForm) string {
 	return "<div style=\"white-space: pre-wrap; font-size:2em;\">" +
 		"Name: " + cf.FirstName + " " + cf.LastName +
 		"\nPhone: " + cf.Phone +
 		"\nEmail: " + cf.Email +
 		"\nNews Letter Opt In: " + cf.NewsLetter + "</div>"
+}
+
+func addRow(row []interface{}) (*sheets.AppendValuesResponse, error) {
+	// sh := access.Sheets()
+	// var req *gsheet.SpreadSheet = &gsheet.SpreadSheet{
+	// 	ID:               "1cZVwQaY8LqsIUwzbCm_yG8tcR5RDog9jD1sHJtF9mSA",
+	// 	WriteRange:       "A2",
+	// 	Vals:             row,
+	// 	ValueInputOption: "RAW",
+	// }
+
+	// Write to the sheet
+	// return sh.AppendRow(req)
+	return &sheets.AppendValuesResponse{}, nil
 }
